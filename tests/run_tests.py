@@ -3,6 +3,7 @@ No third-party libraries and no GitHub Actions required.
 """
 from __future__ import annotations
 
+import itertools
 import os
 import random
 import shutil
@@ -25,14 +26,24 @@ def verify(ok: bool, msg: str) -> None:
 
 
 def compile_all(target: Path) -> dict[str, Path]:
-    compiler = next((shutil.which(c) for c in ("g++", "clang++") if shutil.which(c)), None)
-    if not compiler:
-        raise RuntimeError("Missing g++ or clang++; install a C++17 compiler.")
+    # zig c++ is a portable C++17 compiler usable on Windows without MSVC/MSYS2.
+    zig = os.environ.get("ZIG_EXE") or shutil.which("zig")
+    cxx = os.environ.get("CXX")
+    if cxx:
+        compiler = [cxx]
+    elif shutil.which("g++"):
+        compiler = [shutil.which("g++")]
+    elif shutil.which("clang++"):
+        compiler = [shutil.which("clang++")]
+    elif zig:
+        compiler = [zig, "c++"]
+    else:
+        raise RuntimeError("Missing C++17 compiler. Set CXX or ZIG_EXE, or install g++/clang++.")
     results = {}
     for name in SOURCES:
         dest = target / (name + (".exe" if os.name == "nt" else ""))
         subprocess.run(
-            [compiler, "-std=c++17", "-O2", "-Wall", "-Wextra", "-Wpedantic",
+            [*compiler, "-std=c++17", "-O2", "-Wall", "-Wextra", "-Wpedantic",
              str(ROOT / "solutions" / (name + ".cpp")), "-o", str(dest)],
             check=True, capture_output=True, text=True,
         )
@@ -106,6 +117,55 @@ ALKANE = [None, 1, 1, 1, 2, 3, 5, 9, 18, 35, 75,
           159, 355, 802, 1858, 4347, 10359, 24894, 60523, 148284, 366319]
 
 
+def alkane_bruteforce(n: int) -> int:
+    """Independent graph enumeration via Prufer codes (labeled trees, then canonicalize)."""
+    if n <= 2:
+        return 1
+
+    def canonical(adj: list[list[int]]) -> str:
+        degree = [len(near) for near in adj]
+        leaves = [v for v in range(n) if degree[v] <= 1]
+        remaining = n
+        while remaining > 2:
+            remaining -= len(leaves)
+            new_leaves = []
+            for v in leaves:
+                degree[v] = 0
+                for u in adj[v]:
+                    if degree[u] > 0:
+                        degree[u] -= 1
+                        if degree[u] == 1:
+                            new_leaves.append(u)
+            leaves = new_leaves
+
+        def encode(v: int, parent: int) -> str:
+            branches = sorted(encode(u, v) for u in adj[v] if u != parent)
+            return "(" + "".join(branches) + ")"
+
+        # One center or two centers. Swapping the sides cannot change identity.
+        return min(encode(c, -1) for c in leaves)
+
+    types = set()
+    for code in itertools.product(range(n), repeat=n - 2):
+        degree = [1] * n
+        for v in code:
+            degree[v] += 1
+        if max(degree) > 4:
+            continue
+        edges = [[] for _ in range(n)]
+        for v in code:
+            leaf = next(i for i in range(n) if degree[i] == 1)
+            edges[leaf].append(v)
+            edges[v].append(leaf)
+            degree[leaf] -= 1
+            degree[v] -= 1
+        u, v = (i for i in range(n) if degree[i] == 1)
+        edges[u].append(v)
+        edges[v].append(u)
+        types.add(canonical(edges))
+    return len(types)
+
+
 def main() -> None:
     rng = random.Random(20231130)
     with tempfile.TemporaryDirectory(prefix="kim-lien-hsg-") as td:
@@ -131,6 +191,10 @@ def main() -> None:
             dna = "".join(rng.choices("ATCG", k=rng.randint(1, 180)))
             verify(run(bins["PROTEIN"], dna + "\n") ==
                    protein_reference(dna), f"PROTEIN random {dna}")
+        # Every one of the 4^3 possible DNA codons, including all Unk codons.
+        for triplet in map("".join, itertools.product("ATCG", repeat=3)):
+            verify(run(bins["PROTEIN"], triplet + "\n") ==
+                   protein_reference(triplet), f"PROTEIN all codons {triplet}")
         long_dna = "ATCG" * 25000
         verify(run(bins["PROTEIN"], long_dna + "\n") ==
                protein_reference(long_dna), "PROTEIN 100000 chars")
@@ -153,12 +217,24 @@ def main() -> None:
             nums = [rng.randint(1, 10**9) for _ in range(rng.randint(1, 10))]
             inp = f"{len(nums)}\n" + " ".join(map(str, nums)) + "\n"
             verify(int(run(bins["DIVIDE"], inp)) == divide_reference(nums), f"DIVIDE random {nums}")
+        for length in range(1, 6):
+            for tup in itertools.product((1, 2, 11), repeat=length):
+                nums = list(tup)
+                inp = f"{length}\n" + " ".join(map(str, nums)) + "\n"
+                verify(int(run(bins["DIVIDE"], inp)) == divide_reference(nums),
+                       f"DIVIDE exhaustive {nums}")
         n = 100000
         verify(int(run(bins["DIVIDE"], f"{n}\n" + "11 " * n + "\n")) ==
                (pow(2, n, MOD) - 1) % MOD, "DIVIDE 100000 all divisible")
 
         for n in range(1, 21):
             verify(int(run(bins["ALKANE"], f"{n}\n")) == ALKANE[n], f"ALKANE OEIS n={n}")
+
+        # Independent constructive count: enumerate labeled trees through Prufer
+        # sequences, canonicalize unrooted shapes, and enforce maximum degree 4.
+        for size in range(1, 9):
+            verify(alkane_bruteforce(size) == ALKANE[size],
+                   f"ALKANE independent brute force n={size}")
 
         # Judge file mode, in addition to stdin mode.
         for name, input_data, expected in [

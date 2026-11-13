@@ -1,5 +1,7 @@
 // Bai 4: Dem cac day con khong rong, giu nguyen thu tu, ghep lai chia het cho 11.
-#include <bits/stdc++.h>
+#include <array>
+#include <cstdio>
+#include <iostream>
 using namespace std;
 
 int main() {

@@ -1,5 +1,8 @@
 // Bai 2: DNA template -> mRNA -> amino acids; bo qua 1-2 nucleotide cuoi neu thieu bo ba.
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <iostream>
+#include <string>
+#include <unordered_map>
 using namespace std;
 
 int main() {

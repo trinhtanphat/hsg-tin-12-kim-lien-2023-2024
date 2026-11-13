@@ -1,5 +1,7 @@
 // Bai 3: Ban bi-a. Trai phep phan xa trong hinh chu nhat thanh chuyen dong tren duong thang.
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <cstdio>
+#include <iostream>
 using namespace std;
 
 long long coordinate(long long length, long long start,

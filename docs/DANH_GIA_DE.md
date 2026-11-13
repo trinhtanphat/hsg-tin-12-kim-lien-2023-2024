@@ -25,10 +25,11 @@
 ## Các điểm cần sửa/giải thích trong đề gốc
 
 1. **Tên file Bài 5 không thống nhất:** bảng trang 1 ghi đầu ra `ALKANE.INP`, mô tả chi tiết trang 3 ghi `ALKANE.OUT`. Nên sửa bảng thành `ALKANE.OUT`.
-2. **Bài 2, độ dài DNA không chia hết cho 3:** đề cho phép test không có ràng buộc gì thêm, nhưng chưa nói rõ xử lý 1–2 nucleotide cuối (không tạo bộ ba). Nên ghi rõ *bỏ qua nhóm cuối không đủ 3 phần tử*, nếu đó là chủ ý.
+2. **Bài 3, tọa độ hình chữ nhật bị in sai:** trang 2 ghi đỉnh `(n;0)` thay vì `(0;n)`; vì hình chữ nhật có các đỉnh `(0;0), (m;0), (m;n), (0;n)`. Hình minh họa và các ràng buộc về `(x,y)` làm rõ ý định. Đây là lỗi cần đính chính trong đề.
 3. **Bài 5, thuật ngữ hóa học:** cần nói rõ *chỉ đếm đồng phân cấu tạo liên kết mạch carbon, không xét đồng phân lập thể* (đề mô hình hóa bằng cây không hướng không nhãn nên suy ra được, nhưng nói thẳng tốt hơn).
 4. **Phân phối điểm và mức khó:** hai bài 1+2 chiếm tới 10/20 điểm nhưng cơ bản hơn nhiều so với bài 4+5 chỉ 6/20 điểm. Nếu mục tiêu là chọn đội tuyển mạnh, cần cân nhắc độ phân hóa ở tốp trên.
 5. **Bài 3, khi chạm góc:** diễn đạt hiện tại rằng vận tốc đổi hướng ngược lại là phù hợp với phản xạ lý tưởng, nhưng có thể ghi rõ đảo dấu cả hai thành phần vận tốc ở góc để tránh tranh cãi.
+6. **Bài 2, không có lỗi ràng buộc về bộ ba:** trang 2 nói rõ độ dài xâu chia hết cho 3. Đây là ràng buộc cần giữ nguyên khi trích đề hoặc tạo bộ test chính thức.
 
 ## Gợi ý điều chỉnh thang điểm (tham khảo, không phải đáp án chính thức)
 

@@ -1,6 +1,9 @@
 // Bai 5: Dem cac cay khong danh nhan n dinh, bac <= 4 (alkane structural isomers).
 // Su dung multiset generating functions va dinh ly dissymmetry cho cay.
-#include <bits/stdc++.h>
+#include <array>
+#include <cassert>
+#include <cstdio>
+#include <iostream>
 using namespace std;
 
 using i64 = long long;

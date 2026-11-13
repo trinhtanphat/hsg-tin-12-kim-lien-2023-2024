@@ -29,11 +29,11 @@
 
 **Độ phức tạp.** `O(L)` thời gian, `O(1)` bộ nhớ bổ sung trừ chuỗi đầu vào `O(L)`, với `L<=10^5`.
 
-**Bẫy.** Bộ ba ngoài bảng (`Unk`), phân biệt DNA với mRNA (không tra trực tiếp trên DNA), codon ở cuối có 1–2 ký tự. **Giả định hợp lý:** chỉ codon hoàn chỉnh được đọc; 1–2 nucleotide còn dư không tạo amino acid. Tuy nhiên đề chưa quy định rõ đối với độ dài không chia hết cho 3; đề chính thức cần nêu quy tắc chính xác nếu chấm các test như vậy.
+**Bẫy.** Bộ ba ngoài bảng (`Unk`), phân biệt DNA với mRNA (không tra trực tiếp trên DNA). **Lưu ý chính xác từ trang 2:** đề yêu cầu độ dài chuỗi DNA chia hết cho 3, vì vậy không có bộ ba dở dang trong dữ liệu hợp lệ. Cài đặt vẫn an toàn với dữ liệu ngoài phạm vi (bỏ qua 1–2 ký tự cuối).
 
 ## Bài 3. BILLARD — Bàn bi-a (4 điểm)
 
-**Bài toán.** Viên bi xuất phát ở `(x,y)` trong hình chữ nhật `[0,m]×[0,n]`, di chuyển với vận tốc `(v1,v2)`, phản xạ đàn hồi lý tưởng ở thành; tính tọa độ sau `t` giây.
+**Bài toán.** Viên bi xuất phát ở `(x,y)` trong hình chữ nhật `[0,m]×[0,n]`, di chuyển với vận tốc `(v1,v2)` (`-1 <= v1,v2 <= 1` theo trang 2), phản xạ đàn hồi lý tưởng ở thành; tính tọa độ sau `t` giây. Trang 2 in nhầm đỉnh `(n,0)` thay vì `(0,n)`; thuật toán sử dụng đúng hình chữ nhật và minh họa.
 
 **Trải gương.** Thay vì phản xạ vận tốc ở tường, tưởng tượng phản chiếu các bản sao hình chữ nhật. Trong mặt phẳng trải, viên bi đi thẳng tới `(x+v1*t, y+v2*t)`. Mỗi trục độc lập có chu kỳ `2*length`:
 

@@ -1,5 +1,6 @@
 // Bai 1: Tich ba so nguyen to (dem thua so nguyen to co boi so).
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <iostream>
 using namespace std;
 
 int main() {

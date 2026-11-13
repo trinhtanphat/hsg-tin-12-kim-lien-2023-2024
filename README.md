@@ -23,22 +23,24 @@ printf '12\n' | ./prime   # YES
 g++ -std=c++17 -O2 solutions/ALKANE.cpp -o alkane
 printf '20\n' | ./alkane  # 366319
 
-python tests/run_tests.py
+python tests/run_tests.py  # QA trên cả 5 bài, random + brute-force
 ```
 
-Trên Windows (PowerShell), biên dịch với `g++ ... -o PRIME.exe`, sau đó dùng file `PRIME.INP` và chạy `./PRIME.exe`; kết quả ở `PRIME.OUT`. Bạn cũng có thể dùng [scripts/local_qa.ps1](scripts/local_qa.ps1).
+Trên Windows (PowerShell), biên dịch với `g++ ... -o PRIME.exe`, sau đó dùng file `PRIME.INP` và chạy `./PRIME.exe`; kết quả ở `PRIME.OUT`. Bộ test cũng hỗ trợ `clang++` hoặc Zig `zig c++` thông qua biến `ZIG_EXE` (lệnh chạy được xác thực trên WIN11-181). Bạn cũng có thể dùng [scripts/local_qa.ps1](scripts/local_qa.ps1).
 
 ## Tài liệu
 
+- [Tóm tắt đầy đủ đầu vào/đầu ra/ràng buộc từ ba trang đề](docs/DE_BAI_TOM_TAT.md)
 - [Editorial: phân tích thuật toán + chứng minh + độ phức tạp cả 5 bài](docs/EDITORIAL.md)
 - [Đánh giá đề và những điểm chưa chặt chẽ](docs/DANH_GIA_DE.md)
 - [Bộ kiểm thử tự động](tests/run_tests.py)
+- [Bằng chứng QA 1.194/1.194 PASS trên WIN11-181 + G++ + Clang++](docs/QA_EVIDENCE.md)
 - [Test mẫu](samples/)
 
 ### Lưu ý về cách hiểu đề
 
 - **PRIME:** `8 = 2 × 2 × 2` phải cho `YES`; số nguyên tố được phép trùng.
-- **PROTEIN:** chỉ dịch các **bộ ba đầy đủ**; nếu số nucleotide không chia hết cho 3, 1–2 ký tự cuối bị bỏ qua. Đề không định nghĩa rõ quy tắc trường hợp này; xem đánh giá đề.
+- **PROTEIN:** đề **đã yêu cầu độ dài DNA chia hết cho 3** (trang 2), nên tất cả ký tự hợp lệ đều thuộc một bộ ba hoàn chỉnh. Chương trình cũng bỏ qua nhóm cuối thiếu 1–2 ký tự nếu thử dữ liệu ngoài phạm vi đề.
 - **BILLARD:** `v1`, `v2` có thể âm hoặc bằng 0; phản xạ đúng ngay cả khi chạm góc.
 - **DIVIDE:** đếm **các tập vị trí được chọn**, không gộp các thẻ trùng giá trị; không chọn thẻ nào không được tính.
 - **ALKANE:** đếm **đồng phân cấu tạo mạch carbon** (cây không gắn nhãn bậc ≤4), **không** đếm đồng phân lập thể.
@@ -54,7 +56,7 @@ Trong bảng tổng quan ở trang 1, hàng Bài 5 ghi tên tệp kết quả l�
 
 ## Phạm vi QA
 
-Các bài được kiểm thử bằng mẫu đề, trường hợp biên, kiểm thử ngẫu nhiên với đối chứng brute force / mô phỏng và kiểm tra toàn bộ dãy alkane n=1..20. Dùng `python tests/run_tests.py` để tái chạy và xem số kiểm thử cụ thể. Trạng thái QA tại thời điểm publish phải căn cứ vào log chạy thực tế, không coi việc có test file là đã chạy PASS.
+Các bài được kiểm thử bằng mẫu đề, trường hợp biên, kiểm thử ngẫu nhiên với đối chứng brute force / mô phỏng và kiểm tra toàn bộ dãy alkane n=1..20. Dùng `python tests/run_tests.py  # QA trên cả 5 bài, random + brute-force` để tái chạy và xem số kiểm thử cụ thể. Trạng thái QA tại thời điểm publish phải căn cứ vào log chạy thực tế, không coi việc có test file là đã chạy PASS.
 
 ## License
 
