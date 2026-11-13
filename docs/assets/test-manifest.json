@@ -7,7 +7,7 @@
     "PRIME": {
       "count": 100,
       "zip": "downloads/PRIME_100_tests.zip",
-      "zip_sha256": "3c7385994b9789540b8cb9704fa4284db0cf0df28e2d79ca1f10def4ef4e5582",
+      "zip_sha256": "01bbd382aa5c00aa3886c441bdecccd2b9ea585d4661b4c9c9a5218a2f1e6967",
       "families": [
         "YES-products",
         "edge",
@@ -19,7 +19,7 @@
     "PROTEIN": {
       "count": 100,
       "zip": "downloads/PROTEIN_100_tests.zip",
-      "zip_sha256": "29fa5241cea22365aa8823e56db231b1730c4b6e40c9d18ca39f5b55396463c2",
+      "zip_sha256": "ccbff74e3576630ef971dec5db6e4f3b98eccf31e734a04bac9f27ced55bbfb7",
       "families": [
         "all-64-codons",
         "long-stress",
@@ -30,7 +30,7 @@
     "BILLARD": {
       "count": 100,
       "zip": "downloads/BILLARD_100_tests.zip",
-      "zip_sha256": "54d33207e48f719107106f7e4b2d36f57e9bdb6fbc9632404dda4bb2db4c062d",
+      "zip_sha256": "622ea4449842af21240c16d9e9a98c5a402512b5ec2eb13532c4dfd4285b9b1a",
       "families": [
         "official-sample",
         "random-mixed",
@@ -40,7 +40,7 @@
     "DIVIDE": {
       "count": 100,
       "zip": "downloads/DIVIDE_100_tests.zip",
-      "zip_sha256": "6be1dec8d23e6bdaef8743d82390663564cae0b30d5c0fe808404368f000624f",
+      "zip_sha256": "ba577b3e65508cfea0780749998e20614f147decbae2fde40961f6d6211bc23a",
       "families": [
         "alternating",
         "bruteforce-random",
@@ -59,7 +59,7 @@
     "ALKANE": {
       "count": 20,
       "zip": "downloads/ALKANE_20_tests.zip",
-      "zip_sha256": "980644981fa404ac334365b924577c262fdf8062ea2505a830c48dc47fbc0c15",
+      "zip_sha256": "48f7fb23ce11a4b8d2c853d94143c1a68242f19deffa3499981c090f214180a7",
       "families": [
         "all-valid-n"
       ]

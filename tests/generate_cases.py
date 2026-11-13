@@ -83,11 +83,15 @@ def divide_answer(a):
         assert answer==brute%MOD,(a,answer,brute)
     return str(answer)
 CASES={x:[] for x in NAMES}
+SEEN={x:set() for x in NAMES}
 def add(name,raw,expected,label):
     if name=="PROTEIN":assert len(raw.strip())%3==0 and 3<=len(raw.strip())<=100000
     if name=="PRIME":assert 1<=int(raw)<=10**14
     if name=="ALKANE":assert 1<=int(raw)<=20
-    CASES[name].append((raw.strip()+"\n",str(expected).strip()+"\n",label))
+    inp=raw.strip()+"\n"
+    if inp in SEEN[name]:return  # all published cases must be distinct
+    SEEN[name].add(inp)
+    CASES[name].append((inp,str(expected).strip()+"\n",label))
 # PRIME: four official score bands, repeated factors, large semiprimes and n=1.
 base=[1,2,3,4,6,8,12,16,18,27,30,36,49,64,125,121,999983,1000000,
       1000001,10**14,9999999967,1000000000000,99999999999999,
@@ -194,7 +198,12 @@ for problem,cases in CASES.items():
     path=DOWNLOAD/f"{problem}_{len(cases)}_tests.zip"
     with zipfile.ZipFile(path,"w",zipfile.ZIP_DEFLATED,compresslevel=9) as out:
         for file in sorted(folder.rglob("*")):
-            if file.is_file():out.write(file,file.relative_to(DEST).as_posix())
+            if file.is_file():
+                name=file.relative_to(DEST).as_posix()
+                info=zipfile.ZipInfo(name,date_time=(2026,11,13,0,0,0))
+                info.compress_type=zipfile.ZIP_DEFLATED
+                info.external_attr=0o644<<16
+                out.writestr(info,file.read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
     manifest["problems"][problem]={"count":len(cases),"zip":f"downloads/{path.name}",
        "zip_sha256":hashlib.sha256(path.read_bytes()).hexdigest(),
        "families":sorted(set(r["family"] for r in records))}

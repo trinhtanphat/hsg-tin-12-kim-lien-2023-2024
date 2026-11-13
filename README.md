@@ -6,6 +6,8 @@
 
 **[Mở website tương tác và xem đề 3 trang](https://trinhtanphat.github.io/hsg-tin-12-kim-lien-2023-2024/)** — minh họa 5 bài, mô phỏng, 420 test trong 5 gói ZIP, tài liệu Word/PDF và ảnh scan.
 
+Ảnh đề **nguyên bản 100% byte** được lưu ở [docs/assets/exam/original](docs/assets/exam/original); ảnh tối ưu cho giao diện ở [docs/assets/exam](docs/assets/exam). Word/PDF và 5 gói test tải được ở [docs/downloads](docs/downloads).
+
 ## 5 bài, 20 điểm
 
 | Bài | Tên | Điểm | Mã C++17 | Ý tưởng |
@@ -41,6 +43,7 @@ Trên Windows (PowerShell), biên dịch với `g++ ... -o PRIME.exe`, sau đó 
 - [Ngân hàng 420 test, bộ sinh và SHA-256](tests/TEST_BANK_README.md)
 - [GitHub Pages và nguồn website](docs/PAGES_README.md)
 - [Bằng chứng QA 1.194/1.194 PASS trên WIN11-181 + G++ + Clang++](docs/QA_EVIDENCE.md)
+- [Kiểm toán GitHub Pages, 420 test không trùng và ảnh đề gốc](docs/AUDIT_PAGES_TESTS.md)
 - [Kiểm toán cuối: sanitizer, benchmark, ZIP và phạm vi nghiệm thu](docs/AUDIT_FINAL.md)
 - [Test mẫu](samples/)
 
