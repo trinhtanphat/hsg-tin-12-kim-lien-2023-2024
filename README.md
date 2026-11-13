@@ -34,7 +34,7 @@ Trên Windows (PowerShell), biên dịch với `g++ ... -o PRIME.exe`, sau đó 
 - [Editorial: phân tích thuật toán + chứng minh + độ phức tạp cả 5 bài](docs/EDITORIAL.md)
 - [Đánh giá đề và những điểm chưa chặt chẽ](docs/DANH_GIA_DE.md)
 - [Bộ kiểm thử tự động](tests/run_tests.py)
-- [Bằng chứng QA 1.194/1.194 PASS trên WIN11-181 + G++ + Clang++](docs/QA_EVIDENCE.md)
+- [Bằng chứng QA 1.194/1.194 PASS trên WIN11-181 + G++ + Clang++](docs/QA_EVIDENCE.md)\n- [Kiểm toán cuối: sanitizer, benchmark, ZIP và phạm vi nghiệm thu](docs/AUDIT_FINAL.md)
 - [Test mẫu](samples/)
 
 ### Lưu ý về cách hiểu đề
