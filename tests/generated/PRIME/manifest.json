@@ -1,0 +1,606 @@
+{
+  "problem": "PRIME",
+  "count": 100,
+  "cases": [
+    {
+      "id": "001",
+      "family": "edge",
+      "input_sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "002",
+      "family": "edge",
+      "input_sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "003",
+      "family": "edge",
+      "input_sha256": "1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "004",
+      "family": "edge",
+      "input_sha256": "7de1555df0c2700329e815b93b32c571c3ea54dc967b89e81ab73b9972b72d1d",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "005",
+      "family": "edge",
+      "input_sha256": "06e9d52c1720fca412803e3b07c4b228ff113e303f4c7ab94665319d832bbfb7",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "006",
+      "family": "edge",
+      "input_sha256": "aa67a169b0bba217aa0aa88a65346920c84c42447c36ba5f7ea65f422c1fe5d8",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "007",
+      "family": "edge",
+      "input_sha256": "a1fb50e6c86fae1679ef3351296fd6713411a08cf8dd1790a4fd05fae8688164",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "008",
+      "family": "edge",
+      "input_sha256": "e6c21e8d260fe71882debdb339d2402a2ca7648529bc2303f48649bce0380017",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "009",
+      "family": "edge",
+      "input_sha256": "7ee29791fc17e986b97128845622b077fb45e349fdb80523fac9dba879b4ad60",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "010",
+      "family": "edge",
+      "input_sha256": "932ab0a0e4191d32c0af7b3f565b7b180dbe9869378abc5816f9add54b806e7f",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "011",
+      "family": "edge",
+      "input_sha256": "f4ccd05b3271c386ee55d9876c7450012a3b361e5065c09dc22075e38b3cc35c",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "012",
+      "family": "edge",
+      "input_sha256": "a4b2c5db15348c29451e18b8307e5ef81625ea638e807935f39ceaa8d9ac7758",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "013",
+      "family": "edge",
+      "input_sha256": "6169555d9248be7e184f52250129b0d66c9932af74f4ac7bc716c20013fca362",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "014",
+      "family": "edge",
+      "input_sha256": "913f5d1da2feaf4deeccc9e55cbb350a20f12b3f507e87be85dbb77fdd3cb9bc",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "015",
+      "family": "edge",
+      "input_sha256": "a5e45837a2959db847f7e67a915d0ecaddd47f943af2af5fa6453be497faabca",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "016",
+      "family": "edge",
+      "input_sha256": "0b05feae0bc8448241c8a68d18d0a0e0a97bf00c6126b04c61f23529ab862426",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "017",
+      "family": "edge",
+      "input_sha256": "7035f5cbd57ec1af030dd35f712c3bad9a2183419e851a8c610a75beb19b9148",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "018",
+      "family": "edge",
+      "input_sha256": "085c348f64a3b543e973a33749e90ba20847b99016a87e5228847597d61ce582",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "019",
+      "family": "edge",
+      "input_sha256": "65d4fffab71d99994a126b515ae8855626532ae187e884c9a42414deb8c57481",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "020",
+      "family": "edge",
+      "input_sha256": "ab51863d68f5677f45c8af4efccbde9328cb6a5d1993cb964b52ef558b55bcbd",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "021",
+      "family": "edge",
+      "input_sha256": "fbaea2a93653ab9eeba6079f47ae42f4005a26de141f86a7ef37337910cf2633",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "022",
+      "family": "edge",
+      "input_sha256": "53194eca3a6a6d70f091a6036c69e80ff7ac1f14fabc1f7c403e7a127de51492",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "023",
+      "family": "edge",
+      "input_sha256": "f1107e553125aa5ac60288f146a711e9603b9350e332b7212e45b939d45c99cb",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "024",
+      "family": "edge",
+      "input_sha256": "941919359dd8a429b67f2168d6538c55084ef0e9d15573d7537998344660d21d",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "025",
+      "family": "edge",
+      "input_sha256": "a862149f54d711f54e17a92575d002459b79ebf341a6ac4f187471b79db92da4",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "026",
+      "family": "edge",
+      "input_sha256": "103c049fe9b34f5fa84e0fc93acb993011c7cea8c17c71503b4f31f92477e95b",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "027",
+      "family": "edge",
+      "input_sha256": "f842eb08fa25ee9e041dc0cb4f5de44d3ccaf49e5265eeef0e2a6fb6416406d2",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "028",
+      "family": "edge",
+      "input_sha256": "63f67abd8f2a1eafc2f557790e6c886f7ae4a9c69f721e423b09b622d18f716a",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "029",
+      "family": "power",
+      "input_sha256": "a5e45837a2959db847f7e67a915d0ecaddd47f943af2af5fa6453be497faabca",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "030",
+      "family": "large",
+      "input_sha256": "94ba925540c726ece037513326b7035e2c6a9052f8e28b706093b0d3d1671100",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "031",
+      "family": "small",
+      "input_sha256": "6a96b624433413dc878379ca29b8ef2adee11b81756de44e6c229a0addd0d1dd",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "032",
+      "family": "large",
+      "input_sha256": "e11a12643aa7d58f6c984ab052ccc25adf3f3e231275e26b4e041ef34fb2e6a0",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "033",
+      "family": "YES-products",
+      "input_sha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "034",
+      "family": "power",
+      "input_sha256": "965bec718645eb51a648264c473032afaa340715e0c302162670df109903f9c7",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "035",
+      "family": "large",
+      "input_sha256": "4abfb5871cb2c2b808de204e26254b9e58ec32aea1b8ec90b7adde6534762f11",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "036",
+      "family": "small",
+      "input_sha256": "6f8eeccd50c670e8450cc5f40b3f4caf0cee71ea5d073f30b32c235431c47765",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "037",
+      "family": "large",
+      "input_sha256": "302701d32db0a94da4cf608131ad2f78eb76b7fa016cbb083cc3aea586720e15",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "038",
+      "family": "YES-products",
+      "input_sha256": "bb9ab9c813b41ae2d3fc34782de5a7d2971833ad9a5b268e766bed4eb79d0295",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "039",
+      "family": "power",
+      "input_sha256": "4f71bb761ace37c88826cd8cc1c948e1cf5b5d0cd153dc651a6efdb3dfb9f2b1",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "040",
+      "family": "large",
+      "input_sha256": "8f607082f747d7fb11595f624983bea5dfbd7fd96bd86ffb50a3d000fe2ffefb",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "041",
+      "family": "small",
+      "input_sha256": "53eb1e850c5be197af7908be781eed5e36a3146effe5520861bbe76b23ae8ded",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "042",
+      "family": "large",
+      "input_sha256": "c5433eb128d3ec7f33e6d47768c2091fe0988407530318126f2f89e1c75e53f4",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "043",
+      "family": "YES-products",
+      "input_sha256": "b9610789fd060e9b0cc5a0cac731cccaaba21bc9e7a917713dc82a866e50f06d",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "044",
+      "family": "power",
+      "input_sha256": "297ad2b41ca049e63c572a4cf1941b1abfb92a3edce04b1879e3a21475ff1b37",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "045",
+      "family": "large",
+      "input_sha256": "580f7ab9ac69474787ce05e1e72fe3540e9a9f37395ba5290fc11aab0845a000",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "046",
+      "family": "small",
+      "input_sha256": "5c26686923448d0c2c1c94feb42d774f5692801b7b1ee0b5ab039fc6097f1e8c",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "047",
+      "family": "large",
+      "input_sha256": "74ccf8dafcf27da119f2d0760025ab4daa8d8032e8f38cb1d5db5790fb463e9a",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "048",
+      "family": "YES-products",
+      "input_sha256": "11562b9e861b6dd5ea2be122f4eed99f9645d36010a5f516b7b84bfceceb3c27",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "049",
+      "family": "power",
+      "input_sha256": "f6759e69d43162ee98f7e5e914196ca5fd9f4c5d4697fe8ce377f8f87405de1b",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "050",
+      "family": "large",
+      "input_sha256": "06fb92e11c2ab34f75f26df41f8d2e0edff59726d6131f13d1c11db4ff11e446",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "051",
+      "family": "small",
+      "input_sha256": "45b1c1b93eba16ffd3d0322c6a7e45e3711d43ac220226e29ef956f19d1ffac2",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "052",
+      "family": "large",
+      "input_sha256": "2bda04a64f1e5ba2b3bb5f9c5fdddb6372d59201e092ea828b5ed289aced1447",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "053",
+      "family": "YES-products",
+      "input_sha256": "1d42234635e87f07d19c2a5b7e2f316dd40389c46abd2223052146caa5e3483e",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "054",
+      "family": "power",
+      "input_sha256": "1037049d5c4f82457917258e2cc17c9c48530e6123a7ebd725cc93943a43ebd1",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "055",
+      "family": "large",
+      "input_sha256": "4e19e2a3fec24a7b437d6c3caf7921a3deada83a3c0f85c7ef71dcdb0e817fcf",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "056",
+      "family": "small",
+      "input_sha256": "b39cbee79b85d1e2abbf4c75a296bb37b4a0c39a9357b7b792bf770457d0177f",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "057",
+      "family": "large",
+      "input_sha256": "ea7011d5fd2dc86da47bc1d24a2fb137fc9eb5da2b5c54330cad50d7808b92f2",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "058",
+      "family": "YES-products",
+      "input_sha256": "e8875443734439555d51b736a36af222925596df57a0ee05f9105c8a050c09bc",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "059",
+      "family": "power",
+      "input_sha256": "10159baf262b43a92d95db59dae1f72c645127301661e0a3ce4e38b295a97c58",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "060",
+      "family": "large",
+      "input_sha256": "307b5d00207800a11cde9680b83ebd26fe66589e881e420fbac02919a211803a",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "061",
+      "family": "small",
+      "input_sha256": "4a72eb9440a72c1a7139a9a4bf6560c74e18dd71dd262349bef734b224d3b07d",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "062",
+      "family": "large",
+      "input_sha256": "b3b4156f0993d6a12a6881da537615c8593047398e1c32527ee3cc431a94aba5",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "063",
+      "family": "YES-products",
+      "input_sha256": "aa67a169b0bba217aa0aa88a65346920c84c42447c36ba5f7ea65f422c1fe5d8",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "064",
+      "family": "power",
+      "input_sha256": "f4bf62051b633991d692d14666735bdba486f1a4c1f0133e92749a88d224a1b7",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "065",
+      "family": "large",
+      "input_sha256": "3a50e708d3705a36755da006a78ad66da31880b76884fb9d4b709fb9933e55af",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "066",
+      "family": "small",
+      "input_sha256": "b992832908a98ff326fd3d8fc89dad1e5421bdc5a47432254835add85e0cd75e",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "067",
+      "family": "large",
+      "input_sha256": "983a1c4ffbeaa1987ac77c9908cf4da0faa4dee8d9c9ae965b20a8c5a2f60d73",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "068",
+      "family": "YES-products",
+      "input_sha256": "5e7567bd3a6b763bc6c6e93916e0775c39481495c7c3bccfb3fc218431c62867",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "069",
+      "family": "power",
+      "input_sha256": "37fa4e584ee946ae4f307a4ee00291e49bed4dece6d839146f66874a3e015cf5",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "070",
+      "family": "large",
+      "input_sha256": "2a52744c1e3735bcfad8fd5cc024bb406d393188a1afe5260c747d41ae7d83ca",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "071",
+      "family": "small",
+      "input_sha256": "3cc6edf1a9aefc896b9613793907df257b9611d632892e888b82701bba869128",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "072",
+      "family": "large",
+      "input_sha256": "0ded46c08d6cc5334bfe146feff4bc0e24e1ca054f6a616d0a8c1dbcf67af7e4",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "073",
+      "family": "YES-products",
+      "input_sha256": "961f30c5556b00d1ef1220d5e92de5c42b4b69dca2f1f731ee0a447faf4b28cc",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "074",
+      "family": "power",
+      "input_sha256": "965bec718645eb51a648264c473032afaa340715e0c302162670df109903f9c7",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "075",
+      "family": "large",
+      "input_sha256": "99b5ba01ececde273d9a7bbaa97a8a7f3a83cbb19928725b978f1a17179d0039",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "076",
+      "family": "small",
+      "input_sha256": "8ba6807ac69c3649b059ab577f6fbd89aa1584b3b1435af8f546b29e1b427bec",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "077",
+      "family": "large",
+      "input_sha256": "e90fe3762d6d2b85404ba2d194dd88f77b193d3c3bd00166b5aa1ff44b06ae29",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "078",
+      "family": "YES-products",
+      "input_sha256": "b433a7d2f45e01fae1163e8033ebb2190a27b32b0e7a64e31e73ab63fe12c893",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "079",
+      "family": "power",
+      "input_sha256": "1037049d5c4f82457917258e2cc17c9c48530e6123a7ebd725cc93943a43ebd1",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "080",
+      "family": "large",
+      "input_sha256": "76c86ce9f4c4b1675d969e650cca319c66f6aeb3485006dd7da3a64b086f1962",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "081",
+      "family": "small",
+      "input_sha256": "1de446e6904352f4ed4e59d82b7ef9cd2d453ed8f390828e8b4ac0d3ae36fef6",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "082",
+      "family": "large",
+      "input_sha256": "1cc5040c180f9a881d0fe7c7b7b5359174a13d63bb5c2a2f35538532824b81aa",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "083",
+      "family": "YES-products",
+      "input_sha256": "e885c32f786ecfc9b2a865634bd861f8c5a332c0ab88605f93c751afd1c014d1",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "084",
+      "family": "power",
+      "input_sha256": "aa67a169b0bba217aa0aa88a65346920c84c42447c36ba5f7ea65f422c1fe5d8",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "085",
+      "family": "large",
+      "input_sha256": "d33ee77a12cac4e22109256d054ac8feff5b34dde2d3cba8207c7a673b649996",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "086",
+      "family": "small",
+      "input_sha256": "7bd4d8559aa87ac16c09adab2ac2dec989f4d1223543d8347bebad85494bdb31",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "087",
+      "family": "large",
+      "input_sha256": "39d92da5ecde99470a53dce10379a7084ccd4ce9a896dd87b2fc5cef3df586a7",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "088",
+      "family": "YES-products",
+      "input_sha256": "68ec0db2b690e4d5ee252b97e291e48436b30330a36e0c4362f0cf06a1eeeddb",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "089",
+      "family": "power",
+      "input_sha256": "37fa4e584ee946ae4f307a4ee00291e49bed4dece6d839146f66874a3e015cf5",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "090",
+      "family": "large",
+      "input_sha256": "29987eb1c676436cf1f1190c5d8c2929dec56412fd699037e1552876ecd91b94",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "091",
+      "family": "small",
+      "input_sha256": "1ce9d65af95ed4e98dde29e8315bc117dc72fa121fd13e4d27b2c9cf14fc2f86",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "092",
+      "family": "large",
+      "input_sha256": "d61fe90f6132bf75d6b479e02811b23f4b5b159ab2db5f452ae0a9605186931b",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "093",
+      "family": "YES-products",
+      "input_sha256": "13c1dc569ae4a0d7f90d8f83d22fc9c8fa526e133f8fea0f9526c8533c4d8da3",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "094",
+      "family": "power",
+      "input_sha256": "3ed26e56eb4e40cb4d731e5e170955b7d03de05ec5486ef291e950aa119ba250",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "095",
+      "family": "large",
+      "input_sha256": "ed74710c1bee46e0f1053f64c2a5f70aa8429a4ea5e7cc54acef50b60d3e0abf",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "096",
+      "family": "small",
+      "input_sha256": "52c41bd6b08cdbf6fbaea441406b483e3c35d6f8c44c39f4bdbfcf802daf9ac9",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "097",
+      "family": "large",
+      "input_sha256": "51803c059863b207e03d58c9334d185d8a986e0ea2f5e8d92b62a71d635e6e11",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "098",
+      "family": "YES-products",
+      "input_sha256": "5f15f375bc28cd2f18fa7afe8d27087390ddd1b5ebdc0eab09a06588688c5f64",
+      "output_sha256": "a115e91c2e84c3078fa06914eff28d07590ddfaa47a55fb4f31dd7c5b3566194"
+    },
+    {
+      "id": "099",
+      "family": "power",
+      "input_sha256": "0b05feae0bc8448241c8a68d18d0a0e0a97bf00c6126b04c61f23529ab862426",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    },
+    {
+      "id": "100",
+      "family": "large",
+      "input_sha256": "c7c4633ee801191b45a3707a5030ca696dbfd9e3d5656ab716dde880ecb9f5f8",
+      "output_sha256": "cfe72034a9f298fb79a6c1f2302673bb449c826d446b3efafdde95e6c48dc3ca"
+    }
+  ]
+}

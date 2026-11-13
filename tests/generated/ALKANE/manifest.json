@@ -1,0 +1,126 @@
+{
+  "problem": "ALKANE",
+  "count": 20,
+  "cases": [
+    {
+      "id": "001",
+      "family": "all-valid-n",
+      "input_sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "output_sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "id": "002",
+      "family": "all-valid-n",
+      "input_sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+      "output_sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "id": "003",
+      "family": "all-valid-n",
+      "input_sha256": "1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2",
+      "output_sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "id": "004",
+      "family": "all-valid-n",
+      "input_sha256": "7de1555df0c2700329e815b93b32c571c3ea54dc967b89e81ab73b9972b72d1d",
+      "output_sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    {
+      "id": "005",
+      "family": "all-valid-n",
+      "input_sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06",
+      "output_sha256": "1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2"
+    },
+    {
+      "id": "006",
+      "family": "all-valid-n",
+      "input_sha256": "06e9d52c1720fca412803e3b07c4b228ff113e303f4c7ab94665319d832bbfb7",
+      "output_sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06"
+    },
+    {
+      "id": "007",
+      "family": "all-valid-n",
+      "input_sha256": "10159baf262b43a92d95db59dae1f72c645127301661e0a3ce4e38b295a97c58",
+      "output_sha256": "2e6d31a5983a91251bfae5aefa1c0a19d8ba3cf601d0e8a706b4cfa9661a6b8a"
+    },
+    {
+      "id": "008",
+      "family": "all-valid-n",
+      "input_sha256": "aa67a169b0bba217aa0aa88a65346920c84c42447c36ba5f7ea65f422c1fe5d8",
+      "output_sha256": "7ee29791fc17e986b97128845622b077fb45e349fdb80523fac9dba879b4ad60"
+    },
+    {
+      "id": "009",
+      "family": "all-valid-n",
+      "input_sha256": "2e6d31a5983a91251bfae5aefa1c0a19d8ba3cf601d0e8a706b4cfa9661a6b8a",
+      "output_sha256": "90d7ec0f0acef104d8b6252794295f661a0149634868d02a1ae0c358099638f5"
+    },
+    {
+      "id": "010",
+      "family": "all-valid-n",
+      "input_sha256": "917df3320d778ddbaa5c5c7742bc4046bf803c36ed2b050f30844ed206783469",
+      "output_sha256": "84b9bb077be0d8a29d0d01ef350d718b77c2ec5f40c3ab90502b1b4b5016c550"
+    },
+    {
+      "id": "011",
+      "family": "all-valid-n",
+      "input_sha256": "25d4f2a86deb5e2574bb3210b67bb24fcc4afb19f93a7b65a057daa874a9d18e",
+      "output_sha256": "d8a4344b811f6eda0a52f8a81366eff32fe57a10f597a33214cff788ff271efc"
+    },
+    {
+      "id": "012",
+      "family": "all-valid-n",
+      "input_sha256": "a1fb50e6c86fae1679ef3351296fd6713411a08cf8dd1790a4fd05fae8688164",
+      "output_sha256": "1184d999f23ecad6cca632a6a4d265ba9c47022f1b552c299f30868eb018bd6f"
+    },
+    {
+      "id": "013",
+      "family": "all-valid-n",
+      "input_sha256": "1a252402972f6057fa53cc172b52b9ffca698e18311facd0f3b06ecaaef79e17",
+      "output_sha256": "79331a73ff64b08024cdd0421b58d083067a10b9406944e060701eac615d5e17"
+    },
+    {
+      "id": "014",
+      "family": "all-valid-n",
+      "input_sha256": "9a92adbc0cee38ef658c71ce1b1bf8c65668f166bfb213644c895ccb1ad07a25",
+      "output_sha256": "89bc6e2014ef69af1484b812b80f2d563c26557cb210d4e9a2bf884c0aea9995"
+    },
+    {
+      "id": "015",
+      "family": "all-valid-n",
+      "input_sha256": "238903180cc104ec2c5d8b3f20c5bc61b389ec0a967df8cc208cdc7cd454174f",
+      "output_sha256": "c3071351127fd5baf1b3c27d4da0af0ef39abc6b46d87587f6325c6f03f6cb68"
+    },
+    {
+      "id": "016",
+      "family": "all-valid-n",
+      "input_sha256": "e6c21e8d260fe71882debdb339d2402a2ca7648529bc2303f48649bce0380017",
+      "output_sha256": "be650ee8e2ac5870062488650ca2c6b3802c485d6f8d91d6f70d25dd9bd13ada"
+    },
+    {
+      "id": "017",
+      "family": "all-valid-n",
+      "input_sha256": "54183f4323f377b737433a1e98229ead0fdc686f93bab057ecb612daa94002b5",
+      "output_sha256": "1f7dabeca4fbcf03e5388a746c54ac6544d651d81dba43fa13d91cd299289ec0"
+    },
+    {
+      "id": "018",
+      "family": "all-valid-n",
+      "input_sha256": "7ee29791fc17e986b97128845622b077fb45e349fdb80523fac9dba879b4ad60",
+      "output_sha256": "8716dcc5b7f88f549c1bb2c6f8f667d8c6a96f6e75b2be21f720150cb9bb3073"
+    },
+    {
+      "id": "019",
+      "family": "all-valid-n",
+      "input_sha256": "a9742eb8ee320e006666aef25ae9aeed948247f3125c9cafa7cf97b7e7467dd5",
+      "output_sha256": "f241feef78c7da5dc3dc5baf01977ef86d6a34f0b94d9737bd11681ada8b7c63"
+    },
+    {
+      "id": "020",
+      "family": "all-valid-n",
+      "input_sha256": "5378796307535df3ec8d8b15a2e2dc5641419c3d3060cfe32238c0fa973f7aa3",
+      "output_sha256": "c1747366d7d5b34582e39a3deb808211968d87380c82ae91df87cf722ff9d154"
+    }
+  ]
+}

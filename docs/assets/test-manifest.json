@@ -1,0 +1,68 @@
+{
+  "generator": "tests/generate_cases.py",
+  "seed": 20261113,
+  "official_constraints_only": true,
+  "schema": "1.0",
+  "problems": {
+    "PRIME": {
+      "count": 100,
+      "zip": "downloads/PRIME_100_tests.zip",
+      "zip_sha256": "3c7385994b9789540b8cb9704fa4284db0cf0df28e2d79ca1f10def4ef4e5582",
+      "families": [
+        "YES-products",
+        "edge",
+        "large",
+        "power",
+        "small"
+      ]
+    },
+    "PROTEIN": {
+      "count": 100,
+      "zip": "downloads/PROTEIN_100_tests.zip",
+      "zip_sha256": "29fa5241cea22365aa8823e56db231b1730c4b6e40c9d18ca39f5b55396463c2",
+      "families": [
+        "all-64-codons",
+        "long-stress",
+        "mixed-translation",
+        "official-sample"
+      ]
+    },
+    "BILLARD": {
+      "count": 100,
+      "zip": "downloads/BILLARD_100_tests.zip",
+      "zip_sha256": "54d33207e48f719107106f7e4b2d36f57e9bdb6fbc9632404dda4bb2db4c062d",
+      "families": [
+        "official-sample",
+        "random-mixed",
+        "velocities-and-edges"
+      ]
+    },
+    "DIVIDE": {
+      "count": 100,
+      "zip": "downloads/DIVIDE_100_tests.zip",
+      "zip_sha256": "6be1dec8d23e6bdaef8743d82390663564cae0b30d5c0fe808404368f000624f",
+      "families": [
+        "alternating",
+        "bruteforce-random",
+        "edge-and-concatenation",
+        "max-n-all1",
+        "max-n-all11",
+        "max-n-powers",
+        "max-n-random",
+        "mixed-digits",
+        "official-sample",
+        "random",
+        "uniform",
+        "varying-n-and-digit-length"
+      ]
+    },
+    "ALKANE": {
+      "count": 20,
+      "zip": "downloads/ALKANE_20_tests.zip",
+      "zip_sha256": "980644981fa404ac334365b924577c262fdf8062ea2505a830c48dc47fbc0c15",
+      "families": [
+        "all-valid-n"
+      ]
+    }
+  }
+}
