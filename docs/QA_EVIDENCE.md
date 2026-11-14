@@ -40,3 +40,16 @@
 Hồ sơ PASS 1.194/1.194 ngày 13/11 là **kết quả lịch sử**, không bị sửa hoặc đổi nhãn thành một lần chạy mới. Trong `tests/run_tests.py` phiên bản đó có stress test `"ATCG" * 25000` dài 100.000 ký tự; độ dài này **không chia hết cho 3**, nên chỉ phù hợp kiểm thử chịu lỗi ngoài phạm vi đề, không phù hợp làm trường hợp stress hợp lệ của đề gốc.
 
 Bản cập nhật thay bằng chuỗi **99.999 ký tự** và bổ sung 13 đối chứng viết tay, tách nhóm trường hợp ngoài đặc tả. Kết quả QA mới phải lấy từ log thực chạy sau thay đổi, không suy từ số PASS cũ. Chi tiết: [PROTEIN_AUDIT.md](PROTEIN_AUDIT.md).
+
+
+## QA thực chạy sau merge PR #1 — WIN11-181 ngày 14/11/2026
+
+- **Commit lấy từ `main`:** `15c36be689721953116844658ce44d0a9c0001cf` (khớp chính xác lần chạy).
+- **Thiết bị:** WIN11-181, Windows 11, checkout riêng `C:\\Temp\\KimLien-Audit-20261114`; không thao tác Session 2 hoặc production và không dùng GitHub Actions.
+- **Toolchain:** Python portable 3.13.9; Zig 0.13.0 (`zig c++`, C++17). Zig archive được đối chiếu SHA-256 chính thức `d859994725ef9402381e557c60bb57497215682e355204d754ee3df75ee3c158`.
+- **Hồi quy toàn 5 bài:** stdout `PASS: 1207/1207 assertions; 5 C++17 programs compiled successfully`; script điều phối ghi `FULL_REGRESSION_PASS`.
+- **Kiểm tra độ bao phủ:** PRIME 100, PROTEIN 100, BILLARD 100, DIVIDE 100, ALKANE 20; **0 đầu vào trùng lặp**; stdout `COVERAGE_AUDIT_DONE`, `COVERAGE_PASS`.
+- **Kiểm tra ngân hàng đề:** PRIME 100/100, PROTEIN 100/100, BILLARD 100/100, DIVIDE 100/100, ALKANE 20/20; stdout `PASS GENERATED CASE BANK: 420/420; SHA-256 + ZIP CRC + C++17 output verified`, `TEST_BANK_PASS`.
+- **Kết thúc:** tiến trình PowerShell trả mã `0`; ba giai đoạn kết thúc PASS.
+
+Các số liệu 1.194/1.194 trước đó vẫn là bằng chứng của **phiên bản ngày 13/11/2026**, không bị ghi đè bằng cách sửa nhãn. Đánh giá này vẫn không thay thế chấm bí mật hoặc AC chính thức từ trường.

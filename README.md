@@ -43,7 +43,7 @@ Trên Windows (PowerShell), biên dịch với `g++ ... -o PRIME.exe`, sau đó 
 - [Bộ kiểm thử tự động](tests/run_tests.py)
 - [Ngân hàng 420 test, bộ sinh và SHA-256](tests/TEST_BANK_README.md)
 - [GitHub Pages và nguồn website](docs/PAGES_README.md)
-- [Bằng chứng QA 1.194/1.194 PASS trên WIN11-181 + G++ + Clang++](docs/QA_EVIDENCE.md)
+- [Bằng chứng QA mới 1.207/1.207 PASS trên WIN11-181; hồ sơ lịch sử 1.194 PASS và kiểm toán 420 test](docs/QA_EVIDENCE.md)
 - [Kiểm toán GitHub Pages, 420 test không trùng và ảnh đề gốc](docs/AUDIT_PAGES_TESTS.md)
 - [Kiểm toán cuối: sanitizer, benchmark, ZIP và phạm vi nghiệm thu](docs/AUDIT_FINAL.md)
 - [Test mẫu](samples/)
