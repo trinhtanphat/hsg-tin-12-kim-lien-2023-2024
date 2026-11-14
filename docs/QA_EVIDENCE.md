@@ -67,3 +67,17 @@ Các số liệu 1.194/1.194 trước đó vẫn là bằng chứng của **phi�
 | Mã thoát toàn tiến trình | `0`, `CASE_BANK_PASS` |
 
 Bản sửa bổ sung hai ca so với lần 1.207 trước đó: xung đột khi vừa có `.INP` cũ vừa có stdin mới, và chế độ tệp khi stdin là EOF. Đây là kết quả mã tự kiểm thử, không chứng minh máy chấm ngoài đã chấp nhận.
+
+
+## QA bổ sung đối chứng DIVIDE độc lập — WIN11-181 ngày 15/11/2026
+
+- **Commit của mã chạy QA:** `32048ffbcb527e9260ea8ba814f2e4c35f8461da` (nhánh `audit/2026-11-15-independent-divide-rights`), checkout tại `C:\Temp\KimLien-Audit-20261115`. Đây là SHA được in ra tại cuối tiến trình kiểm thử, không suy từ metadata PR.
+- **Máy:** WIN11-181 Windows 11, qua Private Commander; không thao tác Session 2, không chạy GitHub Actions.
+- **Toolchain:** Python portable 3.13.9 và Zig C++17 0.13.0 tại `C:\Temp\KimLien-QA-20261114`.
+- **Chạy `tests/run_tests.py`:** `PASS: 1211/1211 assertions; 5 C++17 programs compiled successfully`, tiếp theo `REGRESSION_PASS`.
+- **Chạy `tests/coverage_audit.py`:** đủ 100 PRIME + 100 PROTEIN + 100 BILLARD + 100 DIVIDE + 20 ALKANE = 420, 0 input trùng lặp, `COVERAGE_AUDIT_DONE` và `COVERAGE_PASS`.
+- **Chạy `tests/check_generated.py`:** 100/100 PRIME, 100/100 PROTEIN, 100/100 BILLARD, 100/100 DIVIDE, 20/20 ALKANE, `PASS GENERATED CASE BANK: 420/420; SHA-256 + ZIP CRC + C++17 output verified`, `BANK_PASS`.
+- **Mã thoát PowerShell:** `0`, không phải chỉ suy đoán từ phần mô tả commit.
+- **Mức tăng so với 1.209:** hai ca DIVIDE tại `n=100000` sử dụng công thức tổ hợp không phụ thuộc DP 11 số dư: `1` lặp và `10` lặp. Xem [chứng minh đối chứng](INDEPENDENT_TEST_ORACLES.md).
+
+Tất cả số liệu trên là nghiệm thu nội bộ tại SHA cụ thể, **không phải AC chính thức**. Các commit tài liệu sau SHA nói trên không thay đổi mã C++ hoặc script test đã chạy.
