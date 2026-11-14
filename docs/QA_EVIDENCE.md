@@ -33,3 +33,10 @@
 - Đây là **QA tự xây dựng và kiểm tra độc lập**, chưa phải kết quả nộp hệ thống chấm của Sở GD&ĐT.
 - Một số test bổ sung cố tình vượt ngoài ràng buộc đề (DNA không chia hết 3, `|v|>1`) để thử độ ổn định; không thay thế các ràng buộc chính thức.
 - Không sử dụng GitHub Actions và không đụng Session 2, production hay các dịch vụ tunnel.
+
+
+## Đính chính bổ sung ngày 14/11/2026 — PROTEIN
+
+Hồ sơ PASS 1.194/1.194 ngày 13/11 là **kết quả lịch sử**, không bị sửa hoặc đổi nhãn thành một lần chạy mới. Trong `tests/run_tests.py` phiên bản đó có stress test `"ATCG" * 25000` dài 100.000 ký tự; độ dài này **không chia hết cho 3**, nên chỉ phù hợp kiểm thử chịu lỗi ngoài phạm vi đề, không phù hợp làm trường hợp stress hợp lệ của đề gốc.
+
+Bản cập nhật thay bằng chuỗi **99.999 ký tự** và bổ sung 13 đối chứng viết tay, tách nhóm trường hợp ngoài đặc tả. Kết quả QA mới phải lấy từ log thực chạy sau thay đổi, không suy từ số PASS cũ. Chi tiết: [PROTEIN_AUDIT.md](PROTEIN_AUDIT.md).

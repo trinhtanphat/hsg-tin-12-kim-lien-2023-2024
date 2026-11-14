@@ -34,3 +34,8 @@ Trên Windows không có compiler hệ thống, xem `docs/QA_EVIDENCE.md` để 
 
 ## Phạm vi hoàn tất
 Hoàn tất giải thuật, mã nguồn, kiểm thử tự động, đối chứng độc lập, tài liệu đánh giá và gói tải về. Điểm AC chính thức **chưa xác minh** vì không có bộ test/hệ thống chấm chính thức.
+
+
+## Lưu ý bổ sung về miền dữ liệu PROTEIN (14/11/2026)
+
+Thử `100001` ký tự được nêu trong bảng sanitizer phía trên là thử **ngoài miền đề chính thức**, không được dùng để chứng minh độ đúng trên miền dữ liệu hợp lệ. Với ràng buộc dài không quá `100000` và chia hết cho `3`, đầu vào hợp lệ lớn nhất có `99999` ký tự. Kiểm thử chính thức phải dùng chuỗi có độ dài chia hết cho 3. Xem [kiểm toán PROTEIN](PROTEIN_AUDIT.md).

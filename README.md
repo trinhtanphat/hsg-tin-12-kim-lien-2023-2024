@@ -39,6 +39,7 @@ Trên Windows (PowerShell), biên dịch với `g++ ... -o PRIME.exe`, sau đó 
 - [Tóm tắt đầy đủ đầu vào/đầu ra/ràng buộc từ ba trang đề](docs/DE_BAI_TOM_TAT.md)
 - [Editorial: phân tích thuật toán + chứng minh + độ phức tạp cả 5 bài](docs/EDITORIAL.md)
 - [Đánh giá đề và những điểm chưa chặt chẽ](docs/DANH_GIA_DE.md)
+- [Kiểm toán bổ sung PROTEIN: 13 ca đối chứng độc lập, test 99.999 ký tự hợp lệ và phân biệt `Unk`](docs/PROTEIN_AUDIT.md)
 - [Bộ kiểm thử tự động](tests/run_tests.py)
 - [Ngân hàng 420 test, bộ sinh và SHA-256](tests/TEST_BANK_README.md)
 - [GitHub Pages và nguồn website](docs/PAGES_README.md)
@@ -50,7 +51,7 @@ Trên Windows (PowerShell), biên dịch với `g++ ... -o PRIME.exe`, sau đó 
 ### Lưu ý về cách hiểu đề
 
 - **PRIME:** `8 = 2 × 2 × 2` phải cho `YES`; số nguyên tố được phép trùng.
-- **PROTEIN:** đề **đã yêu cầu độ dài DNA chia hết cho 3** (trang 2), nên tất cả ký tự hợp lệ đều thuộc một bộ ba hoàn chỉnh. Chương trình cũng bỏ qua nhóm cuối thiếu 1–2 ký tự nếu thử dữ liệu ngoài phạm vi đề.
+- **PROTEIN:** đề **đã yêu cầu độ dài DNA chia hết cho 3** (trang 2), nên mọi ký tự đều thuộc một bộ ba hoàn chỉnh. Độ dài tối đa hợp lệ là **99.999**, không phải 100.000. Mọi codon nằm ngoài **24 codon mà đề liệt kê** phải trả `Unk`, kể cả codon có ý nghĩa trong bảng mã sinh học đầy đủ. Chương trình chỉ bỏ qua nhóm thiếu 1–2 ký tự khi thử dữ liệu ngoài phạm vi đề.
 - **BILLARD:** `v1`, `v2` có thể âm hoặc bằng 0; phản xạ đúng ngay cả khi chạm góc.
 - **DIVIDE:** đếm **các tập vị trí được chọn**, không gộp các thẻ trùng giá trị; không chọn thẻ nào không được tính.
 - **ALKANE:** đếm **đồng phân cấu tạo mạch carbon** (cây không gắn nhãn bậc ≤4), **không** đếm đồng phân lập thể.
