@@ -269,9 +269,31 @@ def main() -> None:
             work.mkdir()
             (work / (name + ".INP")).write_text(input_data, encoding="utf-8")
             subprocess.run([str(bins[name])], cwd=work, timeout=15, check=True,
-                           capture_output=True)
+                           capture_output=True, stdin=subprocess.DEVNULL)
             output = (work / (name + ".OUT")).read_text(encoding="utf-8").strip()
             verify(output == expected, f"{name} INP/OUT mode")
+
+        # Judge collision regression: a stale official .INP must not steal
+        # piped stdin from a stdout-based judge (historical WA reproducer).
+        work = base / "protein_judge_collision"
+        work.mkdir()
+        (work / "PROTEIN.INP").write_text("TCT\n", encoding="utf-8")
+        p = subprocess.run([str(bins["PROTEIN"])], input="AGT\n", text=True,
+                           cwd=work, capture_output=True, timeout=15, check=True)
+        verify(p.stdout.strip() == "Ser" and
+               (work / "PROTEIN.OUT").read_text(encoding="utf-8").strip() == "Ser",
+               "PROTEIN stdin wins over stale .INP; output mirrored")
+
+        # The original file-only contract still works with stdin explicitly at EOF.
+        work = base / "protein_official_file_only"
+        work.mkdir()
+        (work / "PROTEIN.INP").write_text("TCT\n", encoding="utf-8")
+        p = subprocess.run([str(bins["PROTEIN"])], cwd=work,
+                           stdin=subprocess.DEVNULL, capture_output=True,
+                           text=True, timeout=15, check=True)
+        verify(p.stdout.strip() == "Unk" and
+               (work / "PROTEIN.OUT").read_text(encoding="utf-8").strip() == "Unk",
+               "PROTEIN file-only judge fallback")
 
     print(f"PASS: {CASES}/{CASES} assertions; 5 C++17 programs compiled successfully")
 

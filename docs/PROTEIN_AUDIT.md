@@ -57,3 +57,16 @@ Bản `solutions/PROTEIN.cpp` dùng để biên dịch đã được đối chi�
 | Clang++ 17.0.0 (cùng flags) | **379/379 PASS** | Cùng 379 trường hợp |
 
 Đây là **QA trọng tâm trên Linux**, độc lập với bộ hồi quy toàn repo vừa chạy trên **WIN11-181: 1.207/1.207 PASS** và ngân hàng dữ liệu **420/420 PASS** (SHA-256, ZIP CRC, C++17 output). Cả hai không thay thế AC từ hệ thống chấm trường. Xem [QA_EVIDENCE.md](QA_EVIDENCE.md).
+
+
+## Phát hiện lỗi nhập/xuất có thể gây WA (14/11/2026)
+
+**Tái hiện thực tế trên WIN11-181 từ chương trình trước bản sửa I/O:**
+
+- Khi không có `PROTEIN.INP`, cấp stdin `AGT` → stdout `Ser`.
+- Khi `PROTEIN.INP` chứa `TCT` và đồng thời cấp stdin `AGT`, chương trình trước đó tự động `freopen` sang tệp, stdout rỗng và `PROTEIN.OUT` chứa `Unk`.
+- Đây là lỗi **ưu tiên nguồn nhập/xuất** nếu hệ thống chấm dựa trên stdin/stdout trong thư mục có tệp `PROTEIN.INP` cũ; không chứng minh thuật toán ánh xạ codon sai trên dữ liệu hợp lệ.
+
+**Cách khắc phục trong `solutions/PROTEIN.cpp`:** ưu tiên stdin, chỉ đọc tệp khi stdin EOF; luôn in stdout, đồng thời ghi `PROTEIN.OUT` nếu tệp `PROTEIN.INP` tồn tại. Cờ `-DPROTEIN_FORCE_FILE_IO` chọn chế độ tệp khi chạy tương tác. Bổ sung hai test hồi quy (xung đột đầu vào + chế độ tệp không có stdin), và cô lập stdin=DEVNULL khi kiểm thử file-only. Các kết quả 1.207 PASS lịch sử vẫn thuộc commit `15c36be6`; bản mới phải được chạy lại trước khi công bố số liệu PASS tiếp theo.
+
+**Giới hạn:** Chưa có URL/ID bài chấm và log WA thật từ người dùng, nên chưa xác nhận máy chấm đang sử dụng trường hợp này. Nếu vẫn WA sau sửa, cần xem kết quả chấm thực tế và đối chiếu checker; không được suy từ test nội bộ rằng đã AC chính thức.
