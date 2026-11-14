@@ -44,3 +44,8 @@ Thử `100001` ký tự được nêu trong bảng sanitizer phía trên là th�
 ## Kiểm thử cập nhật thực chạy ngày 14/11/2026
 
 Sau khi merge [PR #1](https://github.com/trinhtanphat/hsg-tin-12-kim-lien-2023-2024/pull/1), commit `15c36be6` đã được chạy lại trên **WIN11-181** bằng Python portable 3.13.9 và Zig C++17 0.13.0: **1.207/1.207 khẳng định PASS**, **5/5 chương trình biên dịch**, kiểm toán độ bao phủ PASS, và **420/420 cặp test công khai PASS** kèm kiểm tra SHA-256 và CRC ZIP. Đây là lần chạy mới, tách biệt với kiểm toán 1.194 khẳng định ngày 13/11. Chi tiết tại [QA_EVIDENCE.md](QA_EVIDENCE.md).
+
+
+## Bổ sung QA bản sửa I/O PROTEIN (14/11/2026)
+
+Commit `89f8d568` kiểm tra trên WIN11-181: **1.209/1.209 PASS**, **5/5 chương trình C++17 biên dịch thành công**; 420/420 bộ test công khai PASS, SHA-256/ZIP CRC PASS; tiến trình kết thúc mã 0. Hai ca mới bắt lỗi ưu tiên nguồn I/O trong `PROTEIN.cpp`. Đây là kiểm thử hồi quy nội bộ; chưa có AC từ máy chấm ngoài. Xem [QA_EVIDENCE.md](QA_EVIDENCE.md).

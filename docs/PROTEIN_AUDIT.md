@@ -57,3 +57,26 @@ Bản `solutions/PROTEIN.cpp` dùng để biên dịch đã được đối chi�
 | Clang++ 17.0.0 (cùng flags) | **379/379 PASS** | Cùng 379 trường hợp |
 
 Đây là **QA trọng tâm trên Linux**, độc lập với bộ hồi quy toàn repo vừa chạy trên **WIN11-181: 1.207/1.207 PASS** và ngân hàng dữ liệu **420/420 PASS** (SHA-256, ZIP CRC, C++17 output). Cả hai không thay thế AC từ hệ thống chấm trường. Xem [QA_EVIDENCE.md](QA_EVIDENCE.md).
+
+
+## Phát hiện lỗi nhập/xuất có thể gây WA (14/11/2026)
+
+**Tái hiện thực tế trên WIN11-181 từ chương trình trước bản sửa I/O:**
+
+- Khi không có `PROTEIN.INP`, cấp stdin `AGT` → stdout `Ser`.
+- Khi `PROTEIN.INP` chứa `TCT` và đồng thời cấp stdin `AGT`, chương trình trước đó tự động `freopen` sang tệp, stdout rỗng và `PROTEIN.OUT` chứa `Unk`.
+- Đây là lỗi **ưu tiên nguồn nhập/xuất** nếu hệ thống chấm dựa trên stdin/stdout trong thư mục có tệp `PROTEIN.INP` cũ; không chứng minh thuật toán ánh xạ codon sai trên dữ liệu hợp lệ.
+
+**Cách khắc phục trong `solutions/PROTEIN.cpp`:** ưu tiên stdin, chỉ đọc tệp khi stdin EOF; luôn in stdout, đồng thời ghi `PROTEIN.OUT` nếu tệp `PROTEIN.INP` tồn tại. Cờ `-DPROTEIN_FORCE_FILE_IO` chọn chế độ tệp khi chạy tương tác. Bổ sung hai test hồi quy (xung đột đầu vào + chế độ tệp không có stdin), và cô lập stdin=DEVNULL khi kiểm thử file-only. Các kết quả 1.207 PASS lịch sử vẫn thuộc commit `15c36be6`; bản mới phải được chạy lại trước khi công bố số liệu PASS tiếp theo.
+
+**Giới hạn:** Chưa có URL/ID bài chấm và log WA thật từ người dùng, nên chưa xác nhận máy chấm đang sử dụng trường hợp này. Nếu vẫn WA sau sửa, cần xem kết quả chấm thực tế và đối chiếu checker; không được suy từ test nội bộ rằng đã AC chính thức.
+
+
+### Kết quả kiểm thử bản sửa I/O trên WIN11-181
+
+- Commit kiểm tra: `89f8d56844cbe70c4ccfdd4856528bff40f9c6ef`.
+- Zig C++17 0.13.0 + Python 3.13.9 portable; toàn bộ **1.209/1.209 assertions PASS**, **5/5 C++17 compiled**. Số 1.209 gồm 2 test mới về ưu tiên stdin và chế độ file-only.
+- `tests/coverage_audit.py` **PASS**, xác nhận 100+100+100+100+20=420 đầu vào duy nhất và các biên ràng buộc.
+- `tests/check_generated.py` **420/420 PASS** cùng kiểm tra SHA-256 manifest, ZIP CRC và đầu ra thực của các chương trình C++17; tiến trình PowerShell trả mã 0.
+- Không chạy GitHub Actions; không thay đổi production hay Session 2.
+- **Quan trọng:** vẫn chưa có log WA/AC thật từ nền tảng chấm. Kết quả PASS nội bộ xác nhận lỗi I/O tái hiện đã được sửa trong môi trường thử, **không chứng nhận AC chính thức**.

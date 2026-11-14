@@ -53,3 +53,17 @@ Bản cập nhật thay bằng chuỗi **99.999 ký tự** và bổ sung 13 đ�
 - **Kết thúc:** tiến trình PowerShell trả mã `0`; ba giai đoạn kết thúc PASS.
 
 Các số liệu 1.194/1.194 trước đó vẫn là bằng chứng của **phiên bản ngày 13/11/2026**, không bị ghi đè bằng cách sửa nhãn. Đánh giá này vẫn không thay thế chấm bí mật hoặc AC chính thức từ trường.
+
+
+## Lần hồi quy sửa I/O PROTEIN ngày 14/11/2026
+
+**Commit:** `89f8d56844cbe70c4ccfdd4856528bff40f9c6ef`, QA tách biệt trên WIN11-181.
+
+| Hạng mục | Kết quả thực tế |
+|---|---|
+| `python tests/run_tests.py` | `PASS: 1209/1209 assertions; 5 C++17 programs compiled successfully` |
+| `python tests/coverage_audit.py` | `COVERAGE_AUDIT_DONE`, `COVERAGE_PASS`, 420 đầu vào duy nhất |
+| `python tests/check_generated.py` | `PASS GENERATED CASE BANK: 420/420; SHA-256 + ZIP CRC + C++17 output verified` |
+| Mã thoát toàn tiến trình | `0`, `CASE_BANK_PASS` |
+
+Bản sửa bổ sung hai ca so với lần 1.207 trước đó: xung đột khi vừa có `.INP` cũ vừa có stdin mới, và chế độ tệp khi stdin là EOF. Đây là kết quả mã tự kiểm thử, không chứng minh máy chấm ngoài đã chấp nhận.

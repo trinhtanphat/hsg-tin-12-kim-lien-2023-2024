@@ -18,7 +18,9 @@
 | 4 | Chia hết cho 11 | 3 | [DIVIDE.cpp](solutions/DIVIDE.cpp) | DP 11 số dư, chọn/bỏ thẻ, đếm modulo `1e9+7` |
 | 5 | Alkane | 3 | [ALKANE.cpp](solutions/ALKANE.cpp) | Hàm sinh đa tập cây không nhãn + định lý dissymmetry |
 
-**Mỗi file có `main()` độc lập; không có phụ thuộc bên ngoài.** Compile và chạy bằng stdin/stdout hoặc đặt `PRIME.INP`, `PROTEIN.INP`, `BILLARD.INP`, `DIVIDE.INP`, `ALKANE.INP` trong thư mục làm việc để chương trình tự ghi đúng tệp `.OUT`. Không kích hoạt GitHub Actions; toàn bộ QA chạy ở máy local.
+**Mỗi file có `main()` độc lập; không có phụ thuộc bên ngoài.**
+
+**PROTEIN — chế độ chấm:** `solutions/PROTEIN.cpp` **ưu tiên stdin** và in stdout; nếu stdin EOF nhưng có `PROTEIN.INP`, chương trình đọc tệp đó và ghi `PROTEIN.OUT`. Nếu cả stdin và `PROTEIN.INP` cùng tồn tại, **stdin thắng** và chương trình ghi kết quả ra cả stdout lẫn `PROTEIN.OUT`. Dùng `-DPROTEIN_FORCE_FILE_IO` để bắt buộc chế độ tệp theo đề gốc khi chạy tương tác. Xem [kiểm toán WA và I/O](docs/PROTEIN_AUDIT.md). Compile và chạy bằng stdin/stdout hoặc đặt `PRIME.INP`, `PROTEIN.INP`, `BILLARD.INP`, `DIVIDE.INP`, `ALKANE.INP` trong thư mục làm việc để chương trình tự ghi đúng tệp `.OUT`. Không kích hoạt GitHub Actions; toàn bộ QA chạy ở máy local.
 
 ## Chạy nhanh
 
@@ -43,7 +45,7 @@ Trên Windows (PowerShell), biên dịch với `g++ ... -o PRIME.exe`, sau đó 
 - [Bộ kiểm thử tự động](tests/run_tests.py)
 - [Ngân hàng 420 test, bộ sinh và SHA-256](tests/TEST_BANK_README.md)
 - [GitHub Pages và nguồn website](docs/PAGES_README.md)
-- [Bằng chứng QA mới 1.207/1.207 PASS trên WIN11-181; hồ sơ lịch sử 1.194 PASS và kiểm toán 420 test](docs/QA_EVIDENCE.md)
+- [Bằng chứng QA mới 1.209/1.209 PASS trên WIN11-181 (sau sửa I/O); hồ sơ lịch sử 1.207 và 1.194 PASS, kiểm toán 420 test](docs/QA_EVIDENCE.md)
 - [Kiểm toán GitHub Pages, 420 test không trùng và ảnh đề gốc](docs/AUDIT_PAGES_TESTS.md)
 - [Kiểm toán cuối: sanitizer, benchmark, ZIP và phạm vi nghiệm thu](docs/AUDIT_FINAL.md)
 - [Test mẫu](samples/)
