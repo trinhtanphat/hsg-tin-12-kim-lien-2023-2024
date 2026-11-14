@@ -39,3 +39,8 @@ Hoàn tất giải thuật, mã nguồn, kiểm thử tự động, đối chứ
 ## Lưu ý bổ sung về miền dữ liệu PROTEIN (14/11/2026)
 
 Thử `100001` ký tự được nêu trong bảng sanitizer phía trên là thử **ngoài miền đề chính thức**, không được dùng để chứng minh độ đúng trên miền dữ liệu hợp lệ. Với ràng buộc dài không quá `100000` và chia hết cho `3`, đầu vào hợp lệ lớn nhất có `99999` ký tự. Kiểm thử chính thức phải dùng chuỗi có độ dài chia hết cho 3. Xem [kiểm toán PROTEIN](PROTEIN_AUDIT.md).
+
+
+## Kiểm thử cập nhật thực chạy ngày 14/11/2026
+
+Sau khi merge [PR #1](https://github.com/trinhtanphat/hsg-tin-12-kim-lien-2023-2024/pull/1), commit `15c36be6` đã được chạy lại trên **WIN11-181** bằng Python portable 3.13.9 và Zig C++17 0.13.0: **1.207/1.207 khẳng định PASS**, **5/5 chương trình biên dịch**, kiểm toán độ bao phủ PASS, và **420/420 cặp test công khai PASS** kèm kiểm tra SHA-256 và CRC ZIP. Đây là lần chạy mới, tách biệt với kiểm toán 1.194 khẳng định ngày 13/11. Chi tiết tại [QA_EVIDENCE.md](QA_EVIDENCE.md).

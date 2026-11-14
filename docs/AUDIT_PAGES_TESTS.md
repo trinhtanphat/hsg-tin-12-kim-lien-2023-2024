@@ -54,3 +54,8 @@ node tests/site_smoke.cjs
 ## Kết luận và giới hạn
 
 Đã nghiệm thu GitHub Pages và 5 chương trình qua bộ test công khai cùng kiểm thử nội bộ. **Không công bố đạt AC chính thức 20/20** do không có kết quả từ hệ thống chấm bí mật. Đánh giá độ khó trong website là nhận xét chuyên môn chủ quan.
+
+
+## Bổ sung kiểm tra hồi quy ngày 14/11/2026
+
+Chỉ số 1.194/1.194 trong biên bản kiểm toán website ngày 13/11 ở trên là kết quả lịch sử. Sau PR #1, WIN11-181 đã tái chạy trên commit `15c36be6`: **1.207/1.207 PASS** (5/5 C++17) và **420/420 test công khai PASS**, kiểm tra SHA-256 và ZIP CRC. Xem [QA_EVIDENCE.md](QA_EVIDENCE.md) để không nhầm số liệu QA của hai phiên bản.

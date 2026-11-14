@@ -41,7 +41,7 @@ python tests/check_generated.py
 ```
 
 - Hồi quy gồm kiểm tra 64 bộ ba, ngẫu nhiên **hợp lệ** (độ dài bội 3), chuỗi dài hợp lệ 99.999, 13 ca đối chứng viết tay, và nhóm **ngoài đặc tả** riêng.
-- Số khẳng định dự kiến của `run_tests.py` là **1.207** (trước đó 1.194; bổ sung 13), nhưng chỉ được ghi là PASS sau khi chạy thực tế.
+- Bộ hồi quy mới **1.207/1.207 PASS** đã chạy thực tế trên WIN11-181 ngày 14/11/2026 từ commit `15c36be6`, gồm 13 đối chứng viết tay bổ sung so với 1.194 khẳng định lịch sử. 5/5 binary C++17 biên dịch thành công.
 - Bộ kiểm thử sinh công khai 420 trường hợp vốn đã dùng PROTEIN 99.999 ký tự cho stress; thay đổi này chủ yếu sửa **test runner hồi quy** và minh bạch phạm vi.
 - QA trên máy WIN11-181 hoặc môi trường C++17 được chỉ định; không sử dụng GitHub Actions.
 - Chưa có bằng chứng từ máy chấm bí mật của nhà trường; không tuyên bố AC chính thức.
@@ -56,4 +56,4 @@ Bản `solutions/PROTEIN.cpp` dùng để biên dịch đã được đối chi�
 | GNU G++ 14.2.0 (C++17, `-O2 -Wall -Wextra -Wpedantic`) | **379/379 PASS** | 13 viết tay + 64 bộ ba + 300 chuỗi DNA hợp lệ ngẫu nhiên + 99.999 ký tự + I/O tệp |
 | Clang++ 17.0.0 (cùng flags) | **379/379 PASS** | Cùng 379 trường hợp |
 
-Đây là **QA trọng tâm trên Linux**, độc lập với bản kiểm thử lịch sử 1.194 assertion; **không đồng nghĩa đã tái chạy 1.207 assertion của toàn bộ repo trên WIN11-181**. Không thay thế AC từ hệ thống chấm trường.
+Đây là **QA trọng tâm trên Linux**, độc lập với bộ hồi quy toàn repo vừa chạy trên **WIN11-181: 1.207/1.207 PASS** và ngân hàng dữ liệu **420/420 PASS** (SHA-256, ZIP CRC, C++17 output). Cả hai không thay thế AC từ hệ thống chấm trường. Xem [QA_EVIDENCE.md](QA_EVIDENCE.md).
