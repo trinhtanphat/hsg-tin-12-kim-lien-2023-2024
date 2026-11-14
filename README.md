@@ -45,9 +45,11 @@ Trên Windows (PowerShell), biên dịch với `g++ ... -o PRIME.exe`, sau đó 
 - [Bộ kiểm thử tự động](tests/run_tests.py)
 - [Ngân hàng 420 test, bộ sinh và SHA-256](tests/TEST_BANK_README.md)
 - [GitHub Pages và nguồn website](docs/PAGES_README.md)
-- [Bằng chứng QA mới 1.209/1.209 PASS trên WIN11-181 (sau sửa I/O); hồ sơ lịch sử 1.207 và 1.194 PASS, kiểm toán 420 test](docs/QA_EVIDENCE.md)
+- [Bằng chứng QA mới 1.211/1.211 PASS trên WIN11-181 (15/11/2026, thêm đối chứng DIVIDE độc lập), 420/420 test; hồ sơ 1.209, 1.207 và 1.194 PASS trước đó](docs/QA_EVIDENCE.md)
 - [Kiểm toán GitHub Pages, 420 test không trùng và ảnh đề gốc](docs/AUDIT_PAGES_TESTS.md)
 - [Kiểm toán cuối: sanitizer, benchmark, ZIP và phạm vi nghiệm thu](docs/AUDIT_FINAL.md)
+- [Đối chứng độc lập DIVIDE ở n=100.000: đồng nhất thức tổ hợp](docs/INDEPENDENT_TEST_ORACLES.md)
+- [Nguồn gốc, quyền sử dụng và phạm vi giấy phép ảnh đề](docs/RIGHTS_AND_SOURCES.md)
 - [Test mẫu](samples/)
 
 ### Lưu ý về cách hiểu đề
@@ -73,4 +75,4 @@ Các bài được kiểm thử bằng mẫu đề, trường hợp biên, kiể
 
 ## License
 
-Mã và tài liệu lời giải tham khảo: MIT ([LICENSE](LICENSE)). Đề gốc thuộc về đơn vị ra đề; repository không tái bản nguyên văn đề hoặc hình ảnh đề.
+Mã nguồn, bộ kiểm thử và phần tài liệu **do dự án tự biên soạn**: MIT ([LICENSE](LICENSE)). Repository **có lưu và hiển thị ảnh scan đề gốc** để phục vụ đối chiếu; phần đề và hình ảnh gốc **không mặc nhiên được cấp phép theo MIT**. Cần xác minh cơ sở quyền sử dụng và phân phối cho từng tài nguyên có nguồn từ bên thứ ba; xem [ghi chú quyền và nguồn gốc](docs/RIGHTS_AND_SOURCES.md).
