@@ -45,3 +45,15 @@ python tests/check_generated.py
 - Bộ kiểm thử sinh công khai 420 trường hợp vốn đã dùng PROTEIN 99.999 ký tự cho stress; thay đổi này chủ yếu sửa **test runner hồi quy** và minh bạch phạm vi.
 - QA trên máy WIN11-181 hoặc môi trường C++17 được chỉ định; không sử dụng GitHub Actions.
 - Chưa có bằng chứng từ máy chấm bí mật của nhà trường; không tuyên bố AC chính thức.
+
+
+## Đối chứng thực chạy trên Linux ngày 14/11/2026
+
+Bản `solutions/PROTEIN.cpp` dùng để biên dịch đã được đối chiếu **Git blob SHA `30a2e3823c06b07aeb62a1fe1dbf870425f61be3`** với tệp trên nhánh kiểm toán (không chỉ dựa trên việc sao chép nội dung).
+
+| Trình biên dịch | Kết quả | Các ca kiểm thử |
+|---|---:|---|
+| GNU G++ 14.2.0 (C++17, `-O2 -Wall -Wextra -Wpedantic`) | **379/379 PASS** | 13 viết tay + 64 bộ ba + 300 chuỗi DNA hợp lệ ngẫu nhiên + 99.999 ký tự + I/O tệp |
+| Clang++ 17.0.0 (cùng flags) | **379/379 PASS** | Cùng 379 trường hợp |
+
+Đây là **QA trọng tâm trên Linux**, độc lập với bản kiểm thử lịch sử 1.194 assertion; **không đồng nghĩa đã tái chạy 1.207 assertion của toàn bộ repo trên WIN11-181**. Không thay thế AC từ hệ thống chấm trường.
