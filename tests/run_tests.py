@@ -248,6 +248,33 @@ def main() -> None:
         verify(int(run(bins["DIVIDE"], f"{n}\n" + "11 " * n + "\n")) ==
                (pow(2, n, MOD) - 1) % MOD, "DIVIDE 100000 all divisible")
 
+        # Independent algebraic oracles for maximum-size data. The expected
+        # values below do not reuse the solution's 11-state DP recurrence.
+        # Repeating '1' k times produces a repunit, divisible by 11 iff k is
+        # even. Each k-element subset of positions yields the same repunit.
+        verify(int(run(bins["DIVIDE"], f"{n}\n" + "1 " * n + "\n")) ==
+               (pow(2, n - 1, MOD) - 1) % MOD,
+               "DIVIDE 100000 ones: even-length binomial identity")
+
+        # Repeating '10' k times produces 10 + 10*100 + ... and 100 == 1
+        # (mod 11). Thus it is divisible by 11 exactly when k % 11 == 0.
+        # Sum C(n,k), k=11,22,... using factorials (not remainder DP).
+        factorial = [1] * (n + 1)
+        for k in range(1, n + 1):
+            factorial[k] = factorial[k - 1] * k % MOD
+        inverse_factorial = [1] * (n + 1)
+        inverse_factorial[n] = pow(factorial[n], MOD - 2, MOD)
+        for k in range(n, 0, -1):
+            inverse_factorial[k - 1] = inverse_factorial[k] * k % MOD
+        expected_tens = sum(
+            factorial[n] * inverse_factorial[k] % MOD *
+            inverse_factorial[n - k] % MOD
+            for k in range(11, n + 1, 11)
+        ) % MOD
+        verify(int(run(bins["DIVIDE"], f"{n}\n" + "10 " * n + "\n")) ==
+               expected_tens,
+               "DIVIDE 100000 tens: multiples-of-11 binomial identity")
+
         for n in range(1, 21):
             verify(int(run(bins["ALKANE"], f"{n}\n")) == ALKANE[n], f"ALKANE OEIS n={n}")
 
