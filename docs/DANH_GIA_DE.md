@@ -29,7 +29,8 @@
 3. **Bài 5, thuật ngữ hóa học:** cần nói rõ *chỉ đếm đồng phân cấu tạo liên kết mạch carbon, không xét đồng phân lập thể* (đề mô hình hóa bằng cây không hướng không nhãn nên suy ra được, nhưng nói thẳng tốt hơn).
 4. **Phân phối điểm và mức khó:** hai bài 1+2 chiếm tới 10/20 điểm nhưng cơ bản hơn nhiều so với bài 4+5 chỉ 6/20 điểm. Nếu mục tiêu là chọn đội tuyển mạnh, cần cân nhắc độ phân hóa ở tốp trên.
 5. **Bài 3, khi chạm góc:** diễn đạt hiện tại rằng vận tốc đổi hướng ngược lại là phù hợp với phản xạ lý tưởng, nhưng có thể ghi rõ đảo dấu cả hai thành phần vận tốc ở góc để tránh tranh cãi.
-6. **Bài 2, không có lỗi ràng buộc về bộ ba:** trang 2 nói rõ độ dài xâu chia hết cho 3. Đây là ràng buộc cần giữ nguyên khi trích đề hoặc tạo bộ test chính thức.
+6. **Bài 2, không có lỗi ràng buộc về bộ ba:** trang 2 nói rõ độ dài xâu chia hết cho 3. Đây là ràng buộc cần giữ nguyên khi trích đề hoặc tạo bộ test chính thức. Vì độ dài tối đa là 100.000, chiều dài hợp lệ lớn nhất là **99.999**. Bộ kiểm thử hồi quy trước đây dùng 100.000 ký tự (ngoài miền đề) đã được điều chỉnh; xem [kiểm toán PROTEIN](PROTEIN_AUDIT.md).
+7. **Bài 2, ranh giới bảng mã sinh học:** đề chỉ liệt kê **24 codon**, còn lại `Unk`; không được áp dụng toàn bộ bảng mã di truyền chuẩn để tự thêm Arg/Ser/Stop ngoài danh sách. Đây là đặc tả bài toán, khác mô hình sinh học đầy đủ và nên được lưu ý rõ khi dạy học.
 
 ## Gợi ý điều chỉnh thang điểm (tham khảo, không phải đáp án chính thức)
 

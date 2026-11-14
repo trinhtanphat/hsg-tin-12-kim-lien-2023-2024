@@ -1,4 +1,6 @@
-// Bai 2: DNA template -> mRNA -> amino acids; bo qua 1-2 nucleotide cuoi neu thieu bo ba.
+// Bai 2: DNA template -> mRNA -> amino acids (chi 24 codon trong bang de).
+// De chinh thuc dam bao do dai DNA chia het cho 3. Neu du lieu ngoai de
+// co 1-2 nucleotide le, vong lap khong tao codon thieu (robustness only).
 #include <cstdio>
 #include <iostream>
 #include <string>

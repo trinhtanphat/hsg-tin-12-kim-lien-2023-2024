@@ -184,20 +184,41 @@ def main() -> None:
             n = rng.randint(1, 10**9)
             verify(run(bins["PRIME"], f"{n}\n") == prime_reference(n), f"PRIME random {n}")
 
-        for dna in ["A", "AT", "AGT", "AGTA", "AGTAG", "TTT", "GGG", "CCC"]:
+        # Official constraints: DNA contains A/T/C/G and length is a multiple of 3.
+        for dna in ["AGT", "TTT", "GGG", "CCC"]:
             verify(run(bins["PROTEIN"], dna + "\n") ==
-                   protein_reference(dna), f"PROTEIN edge {dna}")
+                   protein_reference(dna), f"PROTEIN valid edge {dna}")
+        # Robustness only: these tails violate the official divisible-by-3 rule.
+        for dna in ["A", "AT", "AGTA", "AGTAG"]:
+            verify(run(bins["PROTEIN"], dna + "\n") ==
+                   protein_reference(dna), f"PROTEIN out-of-spec tail {dna}")
+
+        # Hand-checked expected values independent of CODONS/protein_reference.
+        # AGA and AGG are Arg in the full genetic code but Unk in THIS exam.
+        protein_regression_vectors = [
+            ("AGT", "Ser"), ("TGT", "Thr"), ("GCT", "Arg"),
+            ("CCT", "Gly"), ("ATA", "Tyr"), ("GTA", "His"),
+            ("GGA", "Pro"), ("TCT", "Unk"), ("TCC", "Unk"),
+            ("TCA", "Unk"), ("ACT", "Unk"),
+            ("AGTTCA", "Ser-Unk"), ("GTAGGA", "His-Pro"),
+        ]
+        for dna, expected in protein_regression_vectors:
+            verify(run(bins["PROTEIN"], dna + "\n") == expected,
+                   f"PROTEIN hand-checked codon {dna}")
+
         for _ in range(200):
-            dna = "".join(rng.choices("ATCG", k=rng.randint(1, 180)))
+            dna = "".join(rng.choices("ATCG", k=3 * rng.randint(1, 60)))
             verify(run(bins["PROTEIN"], dna + "\n") ==
                    protein_reference(dna), f"PROTEIN random {dna}")
         # Every one of the 4^3 possible DNA codons, including all Unk codons.
         for triplet in map("".join, itertools.product("ATCG", repeat=3)):
             verify(run(bins["PROTEIN"], triplet + "\n") ==
                    protein_reference(triplet), f"PROTEIN all codons {triplet}")
-        long_dna = "ATCG" * 25000
+        # Largest legal length <= 100000 divisible by 3 is 99999, not 100000.
+        long_dna = "ATCG" * 24999 + "ATC"
+        assert len(long_dna) == 99999 and len(long_dna) % 3 == 0
         verify(run(bins["PROTEIN"], long_dna + "\n") ==
-               protein_reference(long_dna), "PROTEIN 100000 chars")
+               protein_reference(long_dna), "PROTEIN max legal 99999 chars")
 
         for _ in range(200):
             m, n = rng.randint(2, 20), rng.randint(2, 20)
