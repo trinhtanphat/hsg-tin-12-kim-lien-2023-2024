@@ -91,3 +91,18 @@ Nền tảng hiển thị **Chế độ I/O: File IO**, yêu cầu đọc `PROTE
 Test bổ sung kiểm tra thứ tự ưu tiên khi đồng thời có file và stdin, chế độ file không có stdin, và dữ liệu dài tối đa hợp lệ **99.999 nucleotide**, với 16.667 `His` + 16.666 `Unk`, viết/đọc qua file.
 
 **Quan trọng:** chưa có nội dung input/expected output của test #14 và chưa có lần chấm QTOJ AC mới. Vì vậy **không thể khẳng định nguyên nhân WA #14 đã được giải quyết** chỉ nhờ PASS nội bộ. Nếu vẫn WA, cần đề nghị người quản trị QTOJ rà soát expected output và tính hợp lệ của test #14, thay vì tự ý biến đổi bảng codon đã khớp đề.
+
+
+## Đối chứng độc lập sau khi QTOJ vẫn WA test #14 (15/11/2026)
+
+**Nguồn phản hồi:** người dùng xác nhận bản sau PR #7 vẫn **15/16 Accepted; test #14 Wrong Answer** tại \`https://qtoj.org/problems/p059?tab=editor\`. Trạng thái này **không phải AC**, dù 1.212 kiểm thử nội bộ từng PASS.
+
+**Khảo sát thực tế:** trang bài p059 của QTOJ (trang công khai) tiếp tục chỉ định \`File IO\`, đầu vào chỉ có A/T/C/G, dài không quá 100.000 và chia hết cho 3, bảng mã gồm 24 codon, codon khác ra \`Unk\`. Mã \`solutions/PROTEIN.cpp\` ở main \`02712af5f4e6ad2ddacb6303bc146c203e1eea52\` khớp phần đặc tả đã công bố; chưa xác định trường hợp đúng đặc tả làm chương trình cho đáp án sai.
+
+**Phương pháp kiểm tra mới:** \`tests/p059_independent_qa.py\` tạo bảng ánh xạ *DNA triplet → amino acid* độc lập (thay vì tái sử dụng bảng *mRNA → amino acid* của lời giải) và kiểm tra nguyên chuỗi output qua \`PROTEIN.INP\`/\`PROTEIN.OUT\`. Nó bao phủ 4.096 cặp hai codon liền nhau, 6 chuỗi thử dài 99.999 nucleotide (ngẫu nhiên, toàn Unk, toàn His, trộn His/Unk, luân phiên đủ codon, mẫu đề lặp), cùng fallback stdin và thứ tự ưu tiên file. Công cụ so sánh toàn bộ output theo ký tự, không chỉ hash, và thất bại tại ký tự đầu tiên khác nếu có.
+
+**Kết quả chạy thực tế WIN11-181:** SHA QA \`4b0fdafea6b2340cbe147b61387d33df79f4916b\`, Python portable 3.13.9 + Zig C++17 0.13.0, \`QA_EXIT=0\`, tất cả nhóm kiểm thử **PASS**. Các SHA-256 ngắn và thời lượng từng ca hiển thị trong stdout; đây không phải tốc độ tương đương QTOJ.
+
+**Kết luận kỹ thuật:** chưa tìm thấy lỗi thuật toán hay file-mode trong miền đặc tả được công khai. Kết quả WA duy nhất vẫn có thể xuất phát từ (a) test ẩn không khớp đặc tả, (b) expected output của bộ chấm không chính xác, (c) phiên bản mã được nộp chưa khớp GitHub, hoặc (d) hành vi checker/runner chưa quan sát được. **Không có bằng chứng để khẳng định nguyên nhân nào.** Không nên chỉnh bảng codon hoặc ràng buộc theo suy đoán chỉ để làm một test qua.
+
+**Bằng chứng cần để truy nguyên:** mã submission và nguồn C++ đúng phiên bản được QTOJ chấm; nếu được phép, báo cáo từ quản trị viên về \`PROTEIN.INP\`/expected \`PROTEIN.OUT\` của test #14 hoặc nguyên nhân checker. Theo dõi [issue #6](https://github.com/trinhtanphat/hsg-tin-12-kim-lien-2023-2024/issues/6). Giữ issue **OPEN** cho tới khi có xác minh 16/16 hoặc phản ví dụ cụ thể.
