@@ -300,27 +300,45 @@ def main() -> None:
             output = (work / (name + ".OUT")).read_text(encoding="utf-8").strip()
             verify(output == expected, f"{name} INP/OUT mode")
 
-        # Judge collision regression: a stale official .INP must not steal
-        # piped stdin from a stdout-based judge (historical WA reproducer).
-        work = base / "protein_judge_collision"
+        # The actual QTOJ p059 problem is File IO: PROTEIN.INP wins even
+        # when the runner also supplies unrelated stdin data.
+        work = base / "protein_official_file_priority"
         work.mkdir()
         (work / "PROTEIN.INP").write_text("TCT\n", encoding="utf-8")
         p = subprocess.run([str(bins["PROTEIN"])], input="AGT\n", text=True,
                            cwd=work, capture_output=True, timeout=15, check=True)
-        verify(p.stdout.strip() == "Ser" and
-               (work / "PROTEIN.OUT").read_text(encoding="utf-8").strip() == "Ser",
-               "PROTEIN stdin wins over stale .INP; output mirrored")
+        verify(p.stdout.strip() == "" and
+               (work / "PROTEIN.OUT").read_text(encoding="utf-8").strip() == "Unk",
+               "PROTEIN official .INP wins over auxiliary stdin")
 
-        # The original file-only contract still works with stdin explicitly at EOF.
+        # File-only execution must not depend on stdin or print a second
+        # unofficial result to stdout.
         work = base / "protein_official_file_only"
         work.mkdir()
         (work / "PROTEIN.INP").write_text("TCT\n", encoding="utf-8")
         p = subprocess.run([str(bins["PROTEIN"])], cwd=work,
                            stdin=subprocess.DEVNULL, capture_output=True,
                            text=True, timeout=15, check=True)
-        verify(p.stdout.strip() == "Unk" and
+        verify(p.stdout.strip() == "" and
                (work / "PROTEIN.OUT").read_text(encoding="utf-8").strip() == "Unk",
-               "PROTEIN file-only judge fallback")
+               "PROTEIN official file-only judge mode")
+
+        # Largest valid DNA input in *official file mode*. The earlier
+        # suite covered this size via stdin, which cannot verify file I/O
+        # at the same boundary. Include all-His/Unk translation content.
+        work = base / "protein_official_max_file"
+        work.mkdir()
+        long_file_dna = "GTA" * 16667 + "TCT" * 16666
+        assert len(long_file_dna) == 99999
+        (work / "PROTEIN.INP").write_text(long_file_dna + "\n", encoding="utf-8")
+        p = subprocess.run([str(bins["PROTEIN"])], cwd=work,
+                           stdin=subprocess.DEVNULL, capture_output=True,
+                           text=True, timeout=15, check=True)
+        expected = "His-" * 16667 + "Unk-" * 16665 + "Unk\n"
+        verify(p.stdout.strip() == "" and
+               (work / "PROTEIN.OUT").read_text(encoding="utf-8") == expected,
+               "PROTEIN 99999 DNA chars file IO; His/Unk boundary")
+
 
     print(f"PASS: {CASES}/{CASES} assertions; 5 C++17 programs compiled successfully")
 
