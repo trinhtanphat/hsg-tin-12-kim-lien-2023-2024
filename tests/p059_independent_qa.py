@@ -16,6 +16,7 @@ import tempfile
 import time
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from run_tests import compile_all
 
 # Derived independently by applying DNA->mRNA complementation to each
