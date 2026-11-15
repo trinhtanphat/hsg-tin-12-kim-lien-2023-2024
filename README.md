@@ -20,7 +20,7 @@
 
 **Mỗi file có `main()` độc lập; không có phụ thuộc bên ngoài.**
 
-**PROTEIN — chế độ chấm:** `solutions/PROTEIN.cpp` **ưu tiên stdin** và in stdout; nếu stdin EOF nhưng có `PROTEIN.INP`, chương trình đọc tệp đó và ghi `PROTEIN.OUT`. Nếu cả stdin và `PROTEIN.INP` cùng tồn tại, **stdin thắng** và chương trình ghi kết quả ra cả stdout lẫn `PROTEIN.OUT`. Dùng `-DPROTEIN_FORCE_FILE_IO` để bắt buộc chế độ tệp theo đề gốc khi chạy tương tác. Xem [kiểm toán WA và I/O](docs/PROTEIN_AUDIT.md). Compile và chạy bằng stdin/stdout hoặc đặt `PRIME.INP`, `PROTEIN.INP`, `BILLARD.INP`, `DIVIDE.INP`, `ALKANE.INP` trong thư mục làm việc để chương trình tự ghi đúng tệp `.OUT`. Không kích hoạt GitHub Actions; toàn bộ QA chạy ở máy local.
+**PROTEIN — chế độ chấm QTOJ p059 (File IO):** `solutions/PROTEIN.cpp` **ưu tiên `PROTEIN.INP` nếu tệp tồn tại** và ghi duy nhất vào `PROTEIN.OUT`. Chỉ khi không tồn tại tệp đầu vào, chương trình mới dùng stdin/stdout (cho trình chấm kiểu standard IO). Nếu cả hai nguồn tồn tại, **tệp `.INP` thắng**, đúng hợp đồng File IO. Dùng `-DPROTEIN_FORCE_FILE_IO` để từ chối chạy khi thiếu tệp `.INP`. Xem [kiểm toán WA và I/O](docs/PROTEIN_AUDIT.md). Compile và chạy bằng stdin/stdout hoặc đặt `PRIME.INP`, `PROTEIN.INP`, `BILLARD.INP`, `DIVIDE.INP`, `ALKANE.INP` trong thư mục làm việc để chương trình tự ghi đúng tệp `.OUT`. Không kích hoạt GitHub Actions; toàn bộ QA chạy ở máy local.
 
 ## Chạy nhanh
 
