@@ -80,3 +80,14 @@ Bản `solutions/PROTEIN.cpp` dùng để biên dịch đã được đối chi�
 - `tests/check_generated.py` **420/420 PASS** cùng kiểm tra SHA-256 manifest, ZIP CRC và đầu ra thực của các chương trình C++17; tiến trình PowerShell trả mã 0.
 - Không chạy GitHub Actions; không thay đổi production hay Session 2.
 - **Quan trọng:** vẫn chưa có log WA/AC thật từ nền tảng chấm. Kết quả PASS nội bộ xác nhận lỗi I/O tái hiện đã được sửa trong môi trường thử, **không chứng nhận AC chính thức**.
+
+
+## Đối chiếu QTOJ p059 File IO — 15/11/2026
+
+Người dùng cung cấp kết quả chấm trên QTOJ: **15/16 Accepted, test #14 Wrong Answer**, dù phiên bản cũ đã vượt 1209 kiểm thử nội bộ. Đã mở trực tiếp trang đề p059 (giao diện công khai, không truy cập hidden tests), đối chiếu bảng 24 codon và điều kiện `|DNA| <= 100000`, độ dài chia hết cho 3. **Không có bằng chứng mã codon sai.**
+
+Nền tảng hiển thị **Chế độ I/O: File IO**, yêu cầu đọc `PROTEIN.INP` và ghi `PROTEIN.OUT`. Vì vậy bản mới ưu tiên file khi nó tồn tại, tránh xung đột với stdin phụ; và chỉ dùng stdin/stdout khi không tìm thấy `.INP`. Ở chế độ file, không ghi bản sao vào stdout. Đây là thay đổi về hợp đồng I/O, không thay đổi thuật toán.
+
+Test bổ sung kiểm tra thứ tự ưu tiên khi đồng thời có file và stdin, chế độ file không có stdin, và dữ liệu dài tối đa hợp lệ **99.999 nucleotide**, với 16.667 `His` + 16.666 `Unk`, viết/đọc qua file.
+
+**Quan trọng:** chưa có nội dung input/expected output của test #14 và chưa có lần chấm QTOJ AC mới. Vì vậy **không thể khẳng định nguyên nhân WA #14 đã được giải quyết** chỉ nhờ PASS nội bộ. Nếu vẫn WA, cần đề nghị người quản trị QTOJ rà soát expected output và tính hợp lệ của test #14, thay vì tự ý biến đổi bảng codon đã khớp đề.
