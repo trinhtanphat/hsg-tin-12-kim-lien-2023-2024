@@ -81,3 +81,17 @@ Bản sửa bổ sung hai ca so với lần 1.207 trước đó: xung đột khi
 - **Mức tăng so với 1.209:** hai ca DIVIDE tại `n=100000` sử dụng công thức tổ hợp không phụ thuộc DP 11 số dư: `1` lặp và `10` lặp. Xem [chứng minh đối chứng](INDEPENDENT_TEST_ORACLES.md).
 
 Tất cả số liệu trên là nghiệm thu nội bộ tại SHA cụ thể, **không phải AC chính thức**. Các commit tài liệu sau SHA nói trên không thay đổi mã C++ hoặc script test đã chạy.
+
+
+## QA QTOJ p059 File IO — WIN11-181 ngày 15/11/2026
+
+- **SHA chính xác đã checkout để chạy:** `3cdfab1a27e1798349650a3a40b7109e1365a7dd`, branch `fix/qtoj-p059-file-io-20261115`, workspace `C:\Temp\KimLien-P059-Audit-20261115`.
+- **Toolchain:** Python portable 3.13.9 + Zig C++17 0.13.0; không dùng GitHub Actions, không can thiệp Session 2.
+- **Hồi quy:** `PASS: 1212/1212 assertions; 5 C++17 programs compiled successfully`, `REGRESSION_PASS`.
+- **Độ bao phủ:** 100 PRIME + 100 PROTEIN + 100 BILLARD + 100 DIVIDE + 20 ALKANE, 0 input trùng, `COVERAGE_AUDIT_DONE`, `COVERAGE_PASS`.
+- **Ngân hàng 420 test:** `PASS GENERATED CASE BANK: 420/420; SHA-256 + ZIP CRC + C++17 output verified`; `BANK_PASS`.
+- **Exit code toàn tiến trình:** `0`, `timed_out=false`.
+- Bổ sung testcase PROTEIN chính thức: file `.INP` ưu tiên khi stdin đồng thời tồn tại, không xuất stdout khi ở chế độ tệp; file dài tối đa 99.999 nucleotide kết hợp His/Unk.
+- **Kết quả chấm ngoài:** báo cáo người dùng có **1 WA tại test #14 trong 16 test QTOJ p059** ở phiên bản cũ. **Chưa có lượt nộp mới/AC từ QTOJ**, vì vậy không tuyên bố đã xử lý dứt điểm WA ẩn. Theo dõi issue #6.
+
+Mọi số liệu QA chỉ đúng với commit trên, các commit tài liệu sau đó không thay đổi mã C++ hoặc test runner.

@@ -20,7 +20,7 @@
 
 **Mỗi file có `main()` độc lập; không có phụ thuộc bên ngoài.**
 
-**PROTEIN — chế độ chấm:** `solutions/PROTEIN.cpp` **ưu tiên stdin** và in stdout; nếu stdin EOF nhưng có `PROTEIN.INP`, chương trình đọc tệp đó và ghi `PROTEIN.OUT`. Nếu cả stdin và `PROTEIN.INP` cùng tồn tại, **stdin thắng** và chương trình ghi kết quả ra cả stdout lẫn `PROTEIN.OUT`. Dùng `-DPROTEIN_FORCE_FILE_IO` để bắt buộc chế độ tệp theo đề gốc khi chạy tương tác. Xem [kiểm toán WA và I/O](docs/PROTEIN_AUDIT.md). Compile và chạy bằng stdin/stdout hoặc đặt `PRIME.INP`, `PROTEIN.INP`, `BILLARD.INP`, `DIVIDE.INP`, `ALKANE.INP` trong thư mục làm việc để chương trình tự ghi đúng tệp `.OUT`. Không kích hoạt GitHub Actions; toàn bộ QA chạy ở máy local.
+**PROTEIN — chế độ chấm QTOJ p059 (File IO):** `solutions/PROTEIN.cpp` **ưu tiên `PROTEIN.INP` nếu tệp tồn tại** và ghi duy nhất vào `PROTEIN.OUT`. Chỉ khi không tồn tại tệp đầu vào, chương trình mới dùng stdin/stdout (cho trình chấm kiểu standard IO). Nếu cả hai nguồn tồn tại, **tệp `.INP` thắng**, đúng hợp đồng File IO. Dùng `-DPROTEIN_FORCE_FILE_IO` để từ chối chạy khi thiếu tệp `.INP`. Xem [kiểm toán WA và I/O](docs/PROTEIN_AUDIT.md). Compile và chạy bằng stdin/stdout hoặc đặt `PRIME.INP`, `PROTEIN.INP`, `BILLARD.INP`, `DIVIDE.INP`, `ALKANE.INP` trong thư mục làm việc để chương trình tự ghi đúng tệp `.OUT`. Không kích hoạt GitHub Actions; toàn bộ QA chạy ở máy local.
 
 ## Chạy nhanh
 
@@ -45,7 +45,7 @@ Trên Windows (PowerShell), biên dịch với `g++ ... -o PRIME.exe`, sau đó 
 - [Bộ kiểm thử tự động](tests/run_tests.py)
 - [Ngân hàng 420 test, bộ sinh và SHA-256](tests/TEST_BANK_README.md)
 - [GitHub Pages và nguồn website](docs/PAGES_README.md)
-- [Bằng chứng QA mới 1.211/1.211 PASS trên WIN11-181 (15/11/2026, thêm đối chứng DIVIDE độc lập), 420/420 test; hồ sơ 1.209, 1.207 và 1.194 PASS trước đó](docs/QA_EVIDENCE.md)
+- [Bằng chứng QA mới 1.212/1.212 PASS trên WIN11-181 (15/11/2026, sửa chế độ File IO PROTEIN cho QTOJ p059), 420/420 test; hồ sơ 1.211, 1.209, 1.207 và 1.194 PASS trước đó](docs/QA_EVIDENCE.md)
 - [Kiểm toán GitHub Pages, 420 test không trùng và ảnh đề gốc](docs/AUDIT_PAGES_TESTS.md)
 - [Kiểm toán cuối: sanitizer, benchmark, ZIP và phạm vi nghiệm thu](docs/AUDIT_FINAL.md)
 - [Đối chứng độc lập DIVIDE ở n=100.000: đồng nhất thức tổ hợp](docs/INDEPENDENT_TEST_ORACLES.md)

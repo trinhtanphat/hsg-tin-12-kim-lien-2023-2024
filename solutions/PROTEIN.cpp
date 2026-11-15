@@ -8,26 +8,22 @@
 using namespace std;
 
 int main() {
-    // Online judges may provide stdin even when a stale PROTEIN.INP exists.
-    // Prefer stdin; fall back to official file input only at EOF.
+    // The official task (QTOJ p059) uses File IO. When PROTEIN.INP
+    // exists, it is authoritative; PROTEIN.OUT must be produced. Only
+    // use stdin/stdout in an environment without the official input file.
+    // This prevents a judge's auxiliary stdin from overriding its .INP.
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    string dna;
-    bool fromFile = false;
+    ifstream fin("PROTEIN.INP");
 #ifdef PROTEIN_FORCE_FILE_IO
-    {
-        ifstream fin("PROTEIN.INP");
-        if (!(fin >> dna)) return 0;
-        fromFile = true;
-    }
-#else
-    if (!(cin >> dna)) {
-        ifstream fin("PROTEIN.INP");
-        if (!(fin >> dna)) return 0;
-        fromFile = true;
-    }
+    if (!fin.is_open()) return 1;
 #endif
+    const bool fileMode = fin.is_open();
+    istream &in = fileMode ? static_cast<istream &>(fin) : cin;
+    string dna;
+    if (!(in >> dna)) return 0;
+
     auto complement = [](char c) -> char {
         switch (c) {
             case 'A': return 'U';
@@ -57,14 +53,12 @@ int main() {
         first = false;
         answer += (it == amino.end() ? "Unk" : it->second);
     }
-    cout << answer << '\n';
-
-    // Mirror results to the official .OUT file when a .INP file exists.
-    // Do not make stdout-only grading fail if the output directory is read-only.
-    ifstream check("PROTEIN.INP");
-    if (fromFile || check.good()) {
-        ofstream fout("PROTEIN.OUT");
-        if (fout) fout << answer << '\n';
-        else if (fromFile) return 1;
+    if (fileMode) {
+        ofstream fout("PROTEIN.OUT", ios::out | ios::trunc);
+        if (!fout) return 1;
+        fout << answer << '\n';
+        if (!fout) return 1;
+    } else {
+        cout << answer << '\n';
     }
 }
