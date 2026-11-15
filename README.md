@@ -45,7 +45,7 @@ Trên Windows (PowerShell), biên dịch với `g++ ... -o PRIME.exe`, sau đó 
 - [Bộ kiểm thử tự động](tests/run_tests.py)
 - [Ngân hàng 420 test, bộ sinh và SHA-256](tests/TEST_BANK_README.md)
 - [GitHub Pages và nguồn website](docs/PAGES_README.md)
-- [Bằng chứng QA mới 1.211/1.211 PASS trên WIN11-181 (15/11/2026, thêm đối chứng DIVIDE độc lập), 420/420 test; hồ sơ 1.209, 1.207 và 1.194 PASS trước đó](docs/QA_EVIDENCE.md)
+- [Bằng chứng QA mới 1.212/1.212 PASS trên WIN11-181 (15/11/2026, sửa chế độ File IO PROTEIN cho QTOJ p059), 420/420 test; hồ sơ 1.211, 1.209, 1.207 và 1.194 PASS trước đó](docs/QA_EVIDENCE.md)
 - [Kiểm toán GitHub Pages, 420 test không trùng và ảnh đề gốc](docs/AUDIT_PAGES_TESTS.md)
 - [Kiểm toán cuối: sanitizer, benchmark, ZIP và phạm vi nghiệm thu](docs/AUDIT_FINAL.md)
 - [Đối chứng độc lập DIVIDE ở n=100.000: đồng nhất thức tổ hợp](docs/INDEPENDENT_TEST_ORACLES.md)
