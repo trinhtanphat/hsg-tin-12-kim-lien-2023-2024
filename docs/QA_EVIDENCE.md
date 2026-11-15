@@ -100,9 +100,9 @@ Mọi số liệu QA chỉ đúng với commit trên, các commit tài liệu sa
 ## P059 independent full-output differential audit — WIN11-181, 15/11/2026
 
 - **Bối cảnh:** người dùng xác nhận QTOJ p059 vẫn **WA ở test #14** sau khi đã sửa File IO. Chưa xác minh trạng thái AC 16/16.
-- **Git SHA chính xác lúc chạy:** \`4b0fdafea6b2340cbe147b61387d33df79f4916b\`, branch \`audit/p059-wa14-independent-oracle-20261115\`.
-- **Lệnh trên WIN11-181:** \`C:\Temp\KimLien-QA-20261114\python\python.exe tests/p059_independent_qa.py\` với \`ZIG_EXE\` đặt tới Zig Windows x64 0.13.0; chạy trong checkout \`C:\Temp\KimLien-P059-WA14-20261115\`.
-- **Kết quả thực tế:** \`PASS all-4096-codon-pairs\`; \`PASS max-random\`; \`PASS max-all-unrecognized\`; \`PASS max-all-His\`; \`PASS max-His-Unk\`; \`PASS max-all-codons-cycled\`; \`PASS max-sample-pattern\`; \`PASS: independent DNA codon oracle, 4096 adjacent pairs, six long file cases, file priority and stdin fallback\`; \`QA_EXIT=0\`.
+- **Git SHA chính xác lúc chạy:** `4b0fdafea6b2340cbe147b61387d33df79f4916b`, branch `audit/p059-wa14-independent-oracle-20261115`.
+- **Lệnh trên WIN11-181:** `C:\Temp\KimLien-QA-20261114\python\python.exe tests/p059_independent_qa.py` với `ZIG_EXE` đặt tới Zig Windows x64 0.13.0; chạy trong checkout `C:\Temp\KimLien-P059-WA14-20261115`.
+- **Kết quả thực tế:** `PASS all-4096-codon-pairs`; `PASS max-random`; `PASS max-all-unrecognized`; `PASS max-all-His`; `PASS max-His-Unk`; `PASS max-all-codons-cycled`; `PASS max-sample-pattern`; `PASS: independent DNA codon oracle, 4096 adjacent pairs, six long file cases, file priority and stdin fallback`; `QA_EXIT=0`.
 - **Độ dài chuỗi:** 24.576 nucleotide (4.096 cặp codon) và 6 chuỗi 99.999 nucleotide. Đối chiếu toàn bộ ký tự đầu ra, không so khớp theo mẫu nhỏ.
 - **Môi trường:** C++17 Zig compiler portable, Python 3.13.9, không GitHub Actions, không can thiệp browser Session 2 hoặc deployment.
 - **Giới hạn:** dữ liệu test #14 của QTOJ chưa có, test này có thể không đại diện cho toàn bộ hidden judge. QA PASS không chứng minh chấm ngoài đã AC hay xác nhận lỗi ở checker QTOJ. Không có thay đổi thuật toán trong nhánh kiểm toán này.
